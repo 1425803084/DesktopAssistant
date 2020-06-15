@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesktopAssistant.controller
+namespace DesktopAssistant.bases.constants
 {
-    class TaskController
+    class AppConstans
     {
+
+        public static string KEY = "faslidj";
+
 
     }
 }

@@ -8,5 +8,14 @@ namespace DesktopAssistant.repository
 {
     class TaskDAO
     {
+
+        
+
+        public Task getById(int id)
+        {
+
+            return null;
+        }
+
     }
 }

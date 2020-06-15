@@ -144,7 +144,7 @@
     <Compile Include="app\page\Task.Designer.cs">
       <DependentUpon>Task.cs</DependentUpon>
     </Compile>
-    <Compile Include="controller\TaskController.cs" />
+    <Compile Include="bases\constants\AppConstans.cs" />
     <Compile Include="domain\Task.cs" />
     <Compile Include="global\config\SqliteConnecter.cs" />
     <Compile Include="Program.cs" />
@@ -182,7 +182,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="base\constants\" />
     <Folder Include="service\clock\" />
     <Folder Include="service\spirit\" />
   </ItemGroup>

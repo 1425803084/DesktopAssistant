@@ -8,5 +8,6 @@ namespace DesktopAssistant.global.config
 {
     class SqliteConnecter
     {
+        
     }
 }

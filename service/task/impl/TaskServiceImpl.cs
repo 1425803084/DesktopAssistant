@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace DesktopAssistant.service.task.impl
 {
-    class TaskServiceImpl
+    class TaskServiceImpl : TaskService
     {
+        public List<Task> getAll()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

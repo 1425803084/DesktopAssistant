@@ -8,5 +8,9 @@ namespace DesktopAssistant.domain
 {
     class Task
     {
+
+        private string detail;
+
+
     }
 }
