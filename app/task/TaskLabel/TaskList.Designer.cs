@@ -44,6 +44,8 @@
             this.task1.Name = "task1";
             this.task1.Size = new System.Drawing.Size(385, 70);
             this.task1.TabIndex = 0;
+            this.task1.Task = null;
+            this.task1.Load += new System.EventHandler(this.task1_Load);
             // 
             // TaskList
             // 

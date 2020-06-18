@@ -44,6 +44,7 @@ namespace DesktopAssistant.app.task
             taskEach.Margin = new Padding(5);
             taskEach.Name = "task_" + tasks.Count;
             taskEach.TabIndex = 0;
+            taskEach.Click += new System.EventHandler(TaskClick);
             this.Controls.Add(taskEach);
             tasks.Add(taskEach);
         }
@@ -56,5 +57,26 @@ namespace DesktopAssistant.app.task
             }
         }
 
+        private void TaskClick(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void OpenDetail()
+        {
+
+        }
+
+        private void CloseDetail()
+        {
+
+        }
+
+
+        private void task1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

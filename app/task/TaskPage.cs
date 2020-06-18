@@ -16,5 +16,10 @@ namespace DesktopAssistant.app.task
         {
             InitializeComponent();
         }
+
+        private void taskLabel1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

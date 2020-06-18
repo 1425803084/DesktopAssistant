@@ -39,8 +39,9 @@
             this.taskLabel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.taskLabel1.Location = new System.Drawing.Point(0, 0);
             this.taskLabel1.Name = "taskLabel1";
-            this.taskLabel1.Size = new System.Drawing.Size(371, 595);
+            this.taskLabel1.Size = new System.Drawing.Size(371, 646);
             this.taskLabel1.TabIndex = 0;
+            this.taskLabel1.Load += new System.EventHandler(this.taskLabel1_Load);
             // 
             // TaskPage
             // 
@@ -48,7 +49,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.taskLabel1);
             this.Name = "TaskPage";
-            this.Size = new System.Drawing.Size(681, 595);
+            this.Size = new System.Drawing.Size(716, 646);
             this.ResumeLayout(false);
 
         }
