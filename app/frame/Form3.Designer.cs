@@ -42,7 +42,7 @@
             this.Pause = new System.Windows.Forms.Button();
             this.reStart = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.TSam = new System.Windows.Forms.Label();
+            this.TSamar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -95,7 +95,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splitContainer2.Panel2.BackgroundImage")));
-            this.splitContainer2.Panel2.Controls.Add(this.TSam);
+            this.splitContainer2.Panel2.Controls.Add(this.TSamar);
             this.splitContainer2.Size = new System.Drawing.Size(687, 576);
             this.splitContainer2.SplitterDistance = 364;
             this.splitContainer2.TabIndex = 0;
@@ -232,17 +232,17 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "完成进度";
             // 
-            // TSam
+            // TSamar
             // 
-            this.TSam.AutoSize = true;
-            this.TSam.BackColor = System.Drawing.Color.Transparent;
-            this.TSam.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TSam.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.TSam.Location = new System.Drawing.Point(19, 20);
-            this.TSam.Name = "TSam";
-            this.TSam.Size = new System.Drawing.Size(116, 25);
-            this.TSam.TabIndex = 12;
-            this.TSam.Text = "任务列表";
+            this.TSamar.AutoSize = true;
+            this.TSamar.BackColor = System.Drawing.Color.Transparent;
+            this.TSamar.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TSamar.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.TSamar.Location = new System.Drawing.Point(19, 20);
+            this.TSamar.Name = "TSamar";
+            this.TSamar.Size = new System.Drawing.Size(116, 25);
+            this.TSamar.TabIndex = 12;
+            this.TSamar.Text = "任务列表";
             // 
             // Form3
             // 
@@ -282,6 +282,6 @@
         private System.Windows.Forms.Button Pause;
         private System.Windows.Forms.Button Start;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label TSam;
+        private System.Windows.Forms.Label TSamar;
     }
 }
