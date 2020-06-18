@@ -1,5 +1,4 @@
 ﻿using DesktopAssistant.global.config;
-using System.Data.SQLite;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,13 +6,14 @@ using System.Linq;
 using System.Text;
 using DesktopAssistant.bases.utils;
 using DesktopAssistant.domain;
+using Microsoft.Data.Sqlite;
 
 namespace DesktopAssistant.repository
 {
     class TaskDAO
     {
         //数据库操作对象
-        SQLiteCommand cmd = SqliteConnecter.getSqliteCommand();
+        SqliteCommand cmd = SqliteConnecter.getSqliteCommand();
 
         private string TaskColumn = "id, start_time, end_time, progress, describe, detail, tag_id";
 
@@ -21,9 +21,9 @@ namespace DesktopAssistant.repository
         {
 
             cmd.CommandText = "SELECT * FORM task WHERE id = @id";
-            cmd.Parameters.Add("id", DbType.Int32).Value = id;
+            cmd.Parameters.Add("id", SqliteType.Integer).Value = id;
 
-            SQLiteDataReader reader = cmd.ExecuteReader();
+            SqliteDataReader reader = cmd.ExecuteReader();
 
             Task task = ModelUtils.ReaderToModel<Task>(reader);
 
@@ -34,7 +34,7 @@ namespace DesktopAssistant.repository
         {
             cmd.CommandText = "SELECT task.* FROM task";
 
-            SQLiteDataReader reader = cmd.ExecuteReader();
+            SqliteDataReader reader = cmd.ExecuteReader();
 
             List<Task> tasks = ModelUtils.ReaderToModelList<Task>(reader);
 
@@ -55,7 +55,7 @@ namespace DesktopAssistant.repository
             cmd.Parameters.AddWithValue("Detail", task.Detail);
             cmd.Parameters.AddWithValue("TagId", task.TagId);
 
-            SQLiteDataReader reader = cmd.ExecuteReader();
+            SqliteDataReader reader = cmd.ExecuteReader();
 
             using (reader)
             {

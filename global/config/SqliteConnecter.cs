@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DesktopAssistant.bases.constants;
-using System.Data.SQLite;
+using Microsoft.Data.Sqlite;
 
 namespace DesktopAssistant.global.config
 {
     public class SqliteConnecter
     {
         //sql cmd
-        public SQLiteCommand command;
+        public SqliteCommand command;
 
         //数据库连接对象
-        private SQLiteConnection connection; 
+        private SqliteConnection connection; 
 
         //系统引用
         private AppConstants appConstants;
@@ -28,16 +28,16 @@ namespace DesktopAssistant.global.config
         private SqliteConnecter()
         {
             appConstants = AppConstants.getInstance();
-            command = new SQLiteCommand();
+            command = new SqliteCommand();
             DBpath = appConstants.dataBasePath;
-            connection = new SQLiteConnection("data source=" + DBpath);
+            connection = new SqliteConnection("data source=" + DBpath);
             connection.Open();
             command.Connection = connection;
 
         }
 
         //获取数据库操作实例
-        public static SQLiteCommand getSqliteCommand()
+        public static SqliteCommand getSqliteCommand()
         {
             return connecter.command;
         }
