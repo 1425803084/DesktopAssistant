@@ -9,8 +9,19 @@ namespace DesktopAssistant.domain
     class Task
     {
 
-        private string detail;
+        public int Id { get; set; }
 
+        public int StartTime { get; set; }
+
+        public int EndTime { get; set; }
+
+        public int Progress { get; set; }
+
+        public string Describe { get; set; }
+
+        public string Detail { get; set; }
+
+        public int TagId { get; set; }
 
     }
 }

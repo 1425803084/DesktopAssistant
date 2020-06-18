@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesktopAssistant.bases.constants
+namespace DesktopAssistant.domain
 {
-    class AppConstans
+    class Tag
     {
+        public int Id { get; set; }
 
-        public static string KEY = "faslidj";
-
-
+        public string Name { get; set; }
     }
 }
