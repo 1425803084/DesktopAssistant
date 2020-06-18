@@ -187,6 +187,12 @@
     <Compile Include="app\page\Task.Designer.cs">
       <DependentUpon>Task.cs</DependentUpon>
     </Compile>
+    <Compile Include="app\TaskDetail\taskdetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="app\TaskDetail\taskdetail.Designer.cs">
+      <DependentUpon>taskdetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="bases\constants\AppConstants.cs" />
     <Compile Include="bases\utils\ModelUtils.cs" />
     <Compile Include="domain\Task.cs" />
@@ -221,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="app\frame\Frame.resx">
       <DependentUpon>Frame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="app\TaskDetail\taskdetail.resx">
+      <DependentUpon>taskdetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
