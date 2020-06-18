@@ -170,6 +170,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="repository\TagDAO.cs" />
     <Compile Include="repository\TaskDAO.cs" />
+    <Compile Include="service\Examine\AutoStart.cs" />
+    <Compile Include="service\Examine\examine.cs" />
     <Compile Include="service\task\impl\TaskServiceImpl.cs" />
     <Compile Include="service\task\TaskService.cs" />
     <Compile Include="Test.cs" />
