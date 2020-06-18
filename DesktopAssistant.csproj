@@ -157,6 +157,12 @@
     <Compile Include="app\controls\TrackBar.Designer.cs">
       <DependentUpon>TrackBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="app\frame\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="app\frame\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="app\frame\Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,12 @@
     <Compile Include="app\task\TaskPage.Designer.cs">
       <DependentUpon>TaskPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="app\tomato\TomatoTimer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="app\tomato\TomatoTimer.Designer.cs">
+      <DependentUpon>TomatoTimer.cs</DependentUpon>
+    </Compile>
     <Compile Include="bases\constants\AppConstants.cs" />
     <Compile Include="bases\utils\ModelUtils.cs" />
     <Compile Include="bases\utils\TimeUtils.cs" />
@@ -223,6 +235,9 @@
     <EmbeddedResource Include="app\controls\TrackBar.resx">
       <DependentUpon>TrackBar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="app\frame\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="app\frame\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="app\task\TaskPage.resx">
       <DependentUpon>TaskPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="app\tomato\TomatoTimer.resx">
+      <DependentUpon>TomatoTimer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

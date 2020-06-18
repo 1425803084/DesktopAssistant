@@ -35,15 +35,15 @@
             // phlTrackBar1
             // 
             this.phlTrackBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(194)))), ((int)(((byte)(244)))));
-            this.phlTrackBar1.Location = new System.Drawing.Point(21, 46);
-            this.phlTrackBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.phlTrackBar1.Location = new System.Drawing.Point(15, 44);
+            this.phlTrackBar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.phlTrackBar1.Max = 100;
             this.phlTrackBar1.Min = 0;
             this.phlTrackBar1.Name = "phlTrackBar1";
             this.phlTrackBar1.P_Value = 50;
             this.phlTrackBar1.Progress_Color = System.Drawing.Color.LightSalmon;
             this.phlTrackBar1.ProgressBar_Color = System.Drawing.Color.Silver;
-            this.phlTrackBar1.Size = new System.Drawing.Size(410, 36);
+            this.phlTrackBar1.Size = new System.Drawing.Size(253, 23);
             this.phlTrackBar1.T_Value = 50;
             this.phlTrackBar1.TabIndex = 0;
             this.phlTrackBar1.TrackBar_Color = System.Drawing.Color.BlueViolet;
@@ -55,21 +55,22 @@
             this.process.AutoSize = true;
             this.process.Font = new System.Drawing.Font("黑体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.process.ForeColor = System.Drawing.Color.Crimson;
-            this.process.Location = new System.Drawing.Point(195, 13);
+            this.process.Location = new System.Drawing.Point(94, 11);
             this.process.Name = "process";
-            this.process.Size = new System.Drawing.Size(73, 24);
+            this.process.Size = new System.Drawing.Size(85, 28);
             this.process.TabIndex = 1;
             this.process.Text = "进度%";
             // 
             // TrackBar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(194)))), ((int)(((byte)(244)))));
             this.Controls.Add(this.process);
             this.Controls.Add(this.phlTrackBar1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "TrackBar";
-            this.Size = new System.Drawing.Size(446, 104);
+            this.Size = new System.Drawing.Size(285, 92);
             this.ResumeLayout(false);
             this.PerformLayout();
 
