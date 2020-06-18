@@ -10,13 +10,6 @@ namespace DesktopAssistant.service.exam
 {
     class examine
     {
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            timer1.Interval = 5000;//间隔时间
-            timer1.Enabled = true;
-            examineProcess();
-            timer1.Start();
-        }
 
         //获得进程的运行时长
         public TimeSpan getProcessTimeLong(Process p)
