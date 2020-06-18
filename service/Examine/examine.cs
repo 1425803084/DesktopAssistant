@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;//引入Process 类
 using System.IO;
+using System.Windows.Forms;
 
 namespace DesktopAssistant.service.exam
 {
