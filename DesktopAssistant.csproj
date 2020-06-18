@@ -139,11 +139,11 @@
     <Compile Include="app\controls\Add.Designer.cs">
       <DependentUpon>Add.cs</DependentUpon>
     </Compile>
-    <Compile Include="app\controls\TaskListEach.cs">
+    <Compile Include="app\task\TaskLabel\TaskEach.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="app\controls\TaskListEach.Designer.cs">
-      <DependentUpon>TaskListEach.cs</DependentUpon>
+    <Compile Include="app\task\TaskLabel\TaskEach.Designer.cs">
+      <DependentUpon>TaskEach.cs</DependentUpon>
     </Compile>
     <Compile Include="app\controls\Select.cs">
       <SubType>UserControl</SubType>
@@ -181,14 +181,27 @@
     <Compile Include="app\frame\Frame.Designer.cs">
       <DependentUpon>Frame.cs</DependentUpon>
     </Compile>
-    <Compile Include="app\page\Task.cs">
+    <Compile Include="app\task\TaskLabel\TaskLabel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="app\page\Task.Designer.cs">
-      <DependentUpon>Task.cs</DependentUpon>
+    <Compile Include="app\task\TaskLabel\TaskLabel.Designer.cs">
+      <DependentUpon>TaskLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="app\task\TaskLabel\TaskList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="app\task\TaskLabel\TaskList.Designer.cs">
+      <DependentUpon>TaskList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="app\task\TaskPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="app\task\TaskPage.Designer.cs">
+      <DependentUpon>TaskPage.cs</DependentUpon>
     </Compile>
     <Compile Include="bases\constants\AppConstants.cs" />
     <Compile Include="bases\utils\ModelUtils.cs" />
+    <Compile Include="bases\utils\TimeUtils.cs" />
     <Compile Include="domain\Task.cs" />
     <Compile Include="global\config\SqliteConnecter.cs" />
     <Compile Include="Program.cs" />
@@ -201,8 +214,8 @@
     <EmbeddedResource Include="app\controls\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="app\controls\TaskListEach.resx">
-      <DependentUpon>TaskListEach.cs</DependentUpon>
+    <EmbeddedResource Include="app\task\TaskLabel\TaskEach.resx">
+      <DependentUpon>TaskEach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="app\controls\Select.resx">
       <DependentUpon>Select.cs</DependentUpon>
@@ -221,6 +234,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="app\frame\Frame.resx">
       <DependentUpon>Frame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="app\task\TaskLabel\TaskLabel.resx">
+      <DependentUpon>TaskLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="app\task\TaskLabel\TaskList.resx">
+      <DependentUpon>TaskList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="app\task\TaskPage.resx">
+      <DependentUpon>TaskPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -247,6 +269,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\page\" />
     <Folder Include="service\clock\" />
     <Folder Include="service\spirit\" />
   </ItemGroup>
@@ -264,6 +287,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PHLTrackBar.dll" />
+    <None Include="Resources\BackgroundImage.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace list
+namespace DesktopAssistant.app.task
 {
-    public partial class list: UserControl
+    public partial class TaskPage : UserControl
     {
-        public list()
+        public TaskPage()
         {
             InitializeComponent();
         }
-
-        private void UserControl1_Load(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
