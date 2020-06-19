@@ -102,7 +102,9 @@
     <Reference Include="SQLitePCLRaw.provider.dynamic_cdecl, Version=2.0.2.669, Culture=neutral, PublicKeyToken=b68184102cba0b3b, processorArchitecture=MSIL">
       <HintPath>packages\SQLitePCLRaw.provider.dynamic_cdecl.2.0.2\lib\netstandard2.0\SQLitePCLRaw.provider.dynamic_cdecl.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
     </Reference>
@@ -155,18 +157,7 @@
     <Compile Include="app\page\Task.Designer.cs">
       <DependentUpon>Task.cs</DependentUpon>
     </Compile>
-    <Compile Include="app\TaskDetail\taskdetail.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="app\TaskDetail\taskdetail.Designer.cs">
-      <DependentUpon>taskdetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="app\task\TaskLabel\TaskEach.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="app\task\TaskDetail\taskdetail.Designer.cs">
-      <DependentUpon>taskdetail.cs</DependentUpon>
-    </Compile>
+
     <Compile Include="app\controls\Select.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -209,24 +200,36 @@
     <Compile Include="app\frame\Frame.Designer.cs">
       <DependentUpon>Frame.cs</DependentUpon>
     </Compile>
+
     <Compile Include="app\task\TaskLabel\TaskEach.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="app\task\TaskLabel\TaskEach.Designer.cs">
       <DependentUpon>TaskEach.cs</DependentUpon>
     </Compile>
+
     <Compile Include="app\task\TaskLabel\TaskLabel.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="app\task\TaskLabel\TaskLabel.Designer.cs">
       <DependentUpon>TaskLabel.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="app\task\TaskDetail\taskdetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>  
+    <Compile Include="app\task\TaskDetail\taskdetail.Designer.cs">
+      <DependentUpon>taskdetail.cs</DependentUpon>
+    </Compile>
+
+    
     <Compile Include="app\task\TaskLabel\TaskList.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="app\task\TaskLabel\TaskList.Designer.cs">
       <DependentUpon>TaskList.cs</DependentUpon>
     </Compile>
+
     <Compile Include="app\task\TaskPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -260,14 +263,15 @@
     <EmbeddedResource Include="app\TaskDetail\taskdetail.resx">
       <DependentUpon>taskdetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="app\task\TaskLabel\TaskEach.resx">
-      <DependentUpon>TaskEach.cs</DependentUpon>
-    </EmbeddedResource>
+    
     <EmbeddedResource Include="app\controls\Select.resx">
       <DependentUpon>Select.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="app\controls\TrackBar.resx">
       <DependentUpon>TrackBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="app\task\TaskDetail\taskdetail.resx">
+      <DependentUpon>taskdetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="app\frame\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
