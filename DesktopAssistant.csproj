@@ -157,7 +157,6 @@
     <Compile Include="app\page\Task.Designer.cs">
       <DependentUpon>Task.cs</DependentUpon>
     </Compile>
-
     <Compile Include="app\controls\Select.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -200,36 +199,30 @@
     <Compile Include="app\frame\Frame.Designer.cs">
       <DependentUpon>Frame.cs</DependentUpon>
     </Compile>
-
     <Compile Include="app\task\TaskLabel\TaskEach.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="app\task\TaskLabel\TaskEach.Designer.cs">
       <DependentUpon>TaskEach.cs</DependentUpon>
     </Compile>
-
     <Compile Include="app\task\TaskLabel\TaskLabel.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="app\task\TaskLabel\TaskLabel.Designer.cs">
       <DependentUpon>TaskLabel.cs</DependentUpon>
     </Compile>
-
     <Compile Include="app\task\TaskDetail\taskdetail.cs">
       <SubType>UserControl</SubType>
-    </Compile>  
+    </Compile>
     <Compile Include="app\task\TaskDetail\taskdetail.Designer.cs">
       <DependentUpon>taskdetail.cs</DependentUpon>
     </Compile>
-
-    
     <Compile Include="app\task\TaskLabel\TaskList.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="app\task\TaskLabel\TaskList.Designer.cs">
       <DependentUpon>TaskList.cs</DependentUpon>
     </Compile>
-
     <Compile Include="app\task\TaskPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -260,7 +253,6 @@
     <EmbeddedResource Include="app\page\mainFrame.resx">
       <DependentUpon>mainFrame.cs</DependentUpon>
     </EmbeddedResource>
-    
     <EmbeddedResource Include="app\controls\Select.resx">
       <DependentUpon>Select.cs</DependentUpon>
     </EmbeddedResource>
