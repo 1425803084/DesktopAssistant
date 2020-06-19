@@ -22,7 +22,9 @@ namespace DesktopAssistant.app.task.TaskLabel
             this.timeText.Text = DateTime.Now.ToString("MM月dd日HH时");
         }
 
-
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ;
+        }
     }
 }

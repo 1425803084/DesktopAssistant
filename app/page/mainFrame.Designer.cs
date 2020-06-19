@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Windows.Forms;
 using DesktopAssistant.app.task;
 using DesktopAssistant.app.TaskDetail;
 using DesktopAssistant.app.tomato;
@@ -147,6 +148,7 @@ namespace DesktopAssistant.app.page
             this.Controls.Add(this.panel1);
             this.Name = "mainFrame";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.mainFrame_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -163,13 +165,41 @@ namespace DesktopAssistant.app.page
         private Class1 class1 = new Class1();
         private examine examine = new examine();
         private System.Windows.Forms.CheckBox DesktopPet;
-  
+        public FormWindowState fwsPrevious;
+        private TaskPage taskPage;
+
+        private void mainFrame_Load(object sender, System.EventArgs e)
+
+        {
+
+            // Save window state
+
+            fwsPrevious = this.WindowState;
+
+
+
+            // Create top most window
+
+            taskPage = new TaskPage(this);
+
+
+        }
+
+        public void RestoreWindow()
+
+        {
+
+            this.WindowState = fwsPrevious;
+
+            this.ShowInTaskbar = true;
+
+        }
+
         private void ListSet_Click(object sender, EventArgs e)
         {
-            TaskPage taskPage = new TaskPage();
-            taskdetail taskDetail = new taskdetail();
+            TaskPage taskPage1 = new TaskPage();
             this.panel2.Controls.Clear();
-            this.panel2.Controls.Add(taskDetail);
+            this.panel2.Controls.Add(taskPage);
             this.panel2.Show();
         }
 

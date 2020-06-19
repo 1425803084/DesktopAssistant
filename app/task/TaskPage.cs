@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DesktopAssistant.service.task.impl;
 using DesktopAssistant.domain;
 using DesktopAssistant.bases.utils;
+using DesktopAssistant.app.page;
 
 namespace DesktopAssistant.app.task
 {
@@ -26,9 +27,11 @@ namespace DesktopAssistant.app.task
                
         }
 
+
+
         private void taskdetail1_Load(object sender, EventArgs e)
         {
-            List<Task> taskList =  taskService.getAll();
+            List<domain.Task> taskList =  taskService.getAll();
 
             taskList.ForEach(t => {
                 this.taskLabel1.taskList1.AddTask(t, TaskClick);
@@ -84,6 +87,11 @@ namespace DesktopAssistant.app.task
         }
 
         private void TaskPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void taskLabel1_Load(object sender, EventArgs e)
         {
 
         }
