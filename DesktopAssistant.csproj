@@ -260,9 +260,6 @@
     <EmbeddedResource Include="app\page\mainFrame.resx">
       <DependentUpon>mainFrame.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="app\TaskDetail\taskdetail.resx">
-      <DependentUpon>taskdetail.cs</DependentUpon>
-    </EmbeddedResource>
     
     <EmbeddedResource Include="app\controls\Select.resx">
       <DependentUpon>Select.cs</DependentUpon>
