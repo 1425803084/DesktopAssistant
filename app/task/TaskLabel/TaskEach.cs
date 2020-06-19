@@ -9,23 +9,22 @@ using System.Windows.Forms;
 using DesktopAssistant.domain;
 using DesktopAssistant.bases.utils;
 
-namespace DesktopAssistant.app.task
+namespace DesktopAssistant.app.task.TaskLabel
 {
     public partial class TaskEach : UserControl
     {
 
-        private Task task;
-
-        public Task Task
-        { 
-            get { return task; } 
-            set 
-            { 
-                task = value;
-                this.describe.Text = task.Describe;
-                this.endTime.Text = TimeUtils.Stamp2String(task.EndTime);
-                this.progress.Text = string.Format("进度: {0}%", task.Progress);
-            } 
+        public Task TaskIn 
+        {
+            get { return TaskIn; }
+            set
+            {
+                TaskIn = value;
+                this.describe.Text = value.Describe;
+                this.endTime.Text = TimeUtils.Stamp2String(value.EndTime);
+                this.progress.Text = string.Format("进度：{0}%", value.Progress);
+                
+            }
         }
 
         public TaskEach()
@@ -33,7 +32,7 @@ namespace DesktopAssistant.app.task
             InitializeComponent();
         }
 
-        private void Task_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

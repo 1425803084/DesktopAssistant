@@ -7,9 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DesktopAssistant.bases.utils;
 
-namespace DesktopAssistant.app.task
+namespace DesktopAssistant.app.task.TaskLabel
 {
     public partial class TaskLabel : UserControl
     {
@@ -18,25 +17,12 @@ namespace DesktopAssistant.app.task
             InitializeComponent();
         }
 
-        private void taskList1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void TaskLabel_Load(object sender, EventArgs e)
         {
-            DateTime data = DateTime.Now;
-            this.dataText.Text = TimeUtils.DataTime2String(data);
+            this.timeText.Text = DateTime.Now.ToString("MM月dd日HH时");
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
+
     }
 }

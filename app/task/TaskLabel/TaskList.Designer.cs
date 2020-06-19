@@ -1,4 +1,4 @@
-﻿namespace DesktopAssistant.app.task
+﻿namespace DesktopAssistant.app.task.TaskLabel
 {
     partial class TaskList
     {
@@ -29,40 +29,35 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskList));
-            this.task1 = new DesktopAssistant.app.task.TaskEach();
+            this.taskEach1 = new DesktopAssistant.app.task.TaskLabel.TaskEach();
             this.SuspendLayout();
             // 
-            // task1
+            // taskEach1
             // 
-            this.task1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.taskEach1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.task1.BackColor = System.Drawing.Color.Transparent;
-            this.task1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("task1.BackgroundImage")));
-            this.task1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.task1.Location = new System.Drawing.Point(10, 12);
-            this.task1.Margin = new System.Windows.Forms.Padding(5);
-            this.task1.Name = "task1";
-            this.task1.Size = new System.Drawing.Size(385, 70);
-            this.task1.TabIndex = 0;
-            this.task1.Task = null;
-            this.task1.Load += new System.EventHandler(this.task1_Load);
+            this.taskEach1.BackColor = System.Drawing.Color.Transparent;
+            this.taskEach1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("taskEach1.BackgroundImage")));
+            this.taskEach1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.taskEach1.Location = new System.Drawing.Point(10, 12);
+            this.taskEach1.Name = "taskEach1";
+            this.taskEach1.Size = new System.Drawing.Size(335, 64);
+            this.taskEach1.TabIndex = 0;
             // 
             // TaskList
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoScroll = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.task1);
-            this.Margin = new System.Windows.Forms.Padding(10);
+            this.Controls.Add(this.taskEach1);
             this.Name = "TaskList";
-            this.Size = new System.Drawing.Size(406, 591);
-            this.Load += new System.EventHandler(this.TaskList_Load);
+            this.Size = new System.Drawing.Size(356, 524);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private TaskEach task1;
+        public TaskEach taskEach1;
     }
 }

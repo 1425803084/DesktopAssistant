@@ -5,19 +5,75 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using DesktopAssistant.service.task.impl;
+using DesktopAssistant.domain;
 
 namespace DesktopAssistant.app.task
 {
     public partial class TaskPage : UserControl
     {
+
+        TaskServiceImpl taskService = TaskServiceImpl.getTaskService();
+
         public TaskPage()
         {
             InitializeComponent();
+            this.taskdetail1.Visible = false;
+            this.taskdetail1.Enabled = false;
+            Size = new Size(this.taskLabel1.Size.Width, Size.Height);
+               
         }
 
-        private void taskLabel1_Load(object sender, EventArgs e)
+        private void taskdetail1_Load(object sender, EventArgs e)
+        {
+            List<Task> taskList =  taskService.getAll();
+
+            taskList.ForEach(t => {
+                this.taskLabel1.taskList1.AddTask(t, TaskClick);
+            });
+        }
+
+
+        private void TaskClick(object sender, EventArgs e)
+        {
+            TaskLabel.TaskEach taskEach = (TaskLabel.TaskEach)sender;
+
+            if (this.taskdetail1.task == null)
+            {
+                this.taskdetail1.task = taskEach.TaskIn;
+                ShowDetail();
+            }
+            else if ( taskEach.TaskIn.Id != this.taskdetail1.task.Id)
+            {
+                this.taskdetail1.SaveTask();
+                this.taskdetail1.task = taskEach.TaskIn;
+                ShowDetail();
+            }
+            else
+            {
+                this.taskdetail1.SaveTask();
+                CloseDetail();
+            }
+
+        }
+
+
+        public void ShowDetail()
+        {
+            this.taskdetail1.Visible = true;
+            this.taskdetail1.Enabled = true;
+            Size = new Size(this.taskLabel1.Size.Width+this.taskdetail1.Size.Width, Size.Height);
+        }
+
+        public void CloseDetail()
+        {
+            this.taskdetail1.Visible = false;
+            this.taskdetail1.Enabled = false;
+            Size = new Size(this.taskLabel1.Size.Width, Size.Height);
+        }
+
+        private void TaskPage_Load(object sender, EventArgs e)
         {
 
         }

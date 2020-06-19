@@ -8,75 +8,42 @@ using System.Text;
 using System.Windows.Forms;
 using DesktopAssistant.domain;
 
-namespace DesktopAssistant.app.task
+namespace DesktopAssistant.app.task.TaskLabel
 {
     public partial class TaskList : UserControl
     {
-
-        private List<TaskEach> tasks = new List<TaskEach>();
-
-        int taskViewHeight = 70;
-
-        int leftMargin = 10;
-
-        int topMargin = 13;
+        public List<TaskEach> tasks = new List<TaskEach>();
 
         public TaskList()
         {
             InitializeComponent();
         }
 
-
-        private void TaskList_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddTask(Task task)
+        public void AddTask(Task task, EventHandler eventHandler)
         {
             TaskEach taskEach = new TaskEach();
-            taskEach.Task = task;
-            taskEach.Size = new Size(this.Size.Width- leftMargin*2, taskViewHeight);
-            taskEach.Location = new Point(leftMargin, topMargin + tasks.Count* taskViewHeight);
-            taskEach.Anchor = ((((AnchorStyles.Top | AnchorStyles.Left)| AnchorStyles.Right)));
+
+            taskEach.TaskIn = task;
+            taskEach.Anchor = this.taskEach1.Anchor = ((((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right)));
             taskEach.BackColor = Color.Transparent;
             taskEach.BackgroundImageLayout = ImageLayout.Stretch;
-            taskEach.Margin = new Padding(5);
-            taskEach.Name = "task_" + tasks.Count;
+            taskEach.Name = "taskEach1";
+            taskEach.Size = new Size(this.Size.Width - 2 * 10, 70);
+            taskEach.Location = new Point(10, 12 + 70 * tasks.Count);
             taskEach.TabIndex = 0;
-            taskEach.Click += new System.EventHandler(TaskClick);
+            taskEach.Click += eventHandler;
+
             this.Controls.Add(taskEach);
-            tasks.Add(taskEach);
-        }
-
-        private void AddTaskList(List<Task> tasks)
-        {
-            foreach(Task task in tasks)
-            {
-                AddTask(task);            
-            }
-        }
-
-        private void TaskClick(object sender, EventArgs e)
-        {
+            this.tasks.Add(taskEach);
 
         }
 
-
-        private void OpenDetail()
+        public void AddTaskList(List<Task> taskList)
         {
-
-        }
-
-        private void CloseDetail()
-        {
-
-        }
-
-
-        private void task1_Load(object sender, EventArgs e)
-        {
-
+            //foreach(Task task in taskList)
+            //{
+            //    AddTask(task);
+            //}
         }
     }
 }
