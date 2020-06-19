@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopAssistant.app.frame;
+using DesktopAssistant.app.page;
 using DesktopAssistant.bases.constants;
 
 namespace DesktopAssistant
@@ -25,7 +26,7 @@ namespace DesktopAssistant
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frame());
+            Application.Run(new mainFrame());
         }
     }
 }
