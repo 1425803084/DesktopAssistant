@@ -21,10 +21,14 @@ namespace DesktopAssistant.app.task
             get { return task; } 
             set 
             { 
-                task = value;
-                this.describe.Text = task.Describe;
-                this.endTime.Text = TimeUtils.Stamp2String(task.EndTime);
-                this.progress.Text = string.Format("进度: {0}%", task.Progress);
+                if(task!=null)
+                {
+                    task = value;
+                    this.describe.Text = task.Describe;
+                    this.endTime.Text = TimeUtils.Stamp2String(task.EndTime);
+                    this.progress.Text = string.Format("进度: {0}%", task.Progress);
+                }
+               
             } 
         }
 

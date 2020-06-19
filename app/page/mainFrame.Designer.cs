@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
+using DesktopAssistant.app.task;
+using DesktopAssistant.app.TaskDetail;
 using DesktopAssistant.app.tomato;
 using DesktopAssistant.service.exam;
 
@@ -161,14 +163,20 @@ namespace DesktopAssistant.app.page
         private Class1 class1 = new Class1();
         private examine examine = new examine();
         private System.Windows.Forms.CheckBox DesktopPet;
+  
         private void ListSet_Click(object sender, EventArgs e)
         {
+            TaskPage taskPage = new TaskPage();
+            taskdetail taskDetail = new taskdetail();
+            this.panel2.Controls.Clear();
+            this.panel2.Controls.Add(taskDetail);
             this.panel2.Show();
         }
 
         private void TClock_Click(object sender, EventArgs e)
         {
             TomatoTimer tomatoTimer = new TomatoTimer();
+            this.panel2.Controls.Clear();
             this.panel2.Controls.Add(tomatoTimer);
             this.panel2.Show();
         }
