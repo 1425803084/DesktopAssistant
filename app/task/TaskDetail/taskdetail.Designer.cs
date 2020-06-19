@@ -375,7 +375,6 @@
             // 
             // progressRatio
             // 
-            this.progressRatio.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.progressRatio.AutoSize = true;
             this.progressRatio.BackColor = System.Drawing.Color.Transparent;
             this.progressRatio.Font = new System.Drawing.Font("黑体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));

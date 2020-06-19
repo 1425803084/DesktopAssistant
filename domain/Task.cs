@@ -23,5 +23,7 @@ namespace DesktopAssistant.domain
 
         public int TagId { get; set; }
 
+        public bool Finish { get; set; }
+
     }
 }

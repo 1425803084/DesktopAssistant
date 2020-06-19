@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopAssistant.app.frame;
 using DesktopAssistant.app.page;
 using DesktopAssistant.bases.constants;
+using DesktopAssistant.domain;
+using DesktopAssistant.global.config;
+using Microsoft.Data.Sqlite;
 
 namespace DesktopAssistant
 {
@@ -22,7 +24,7 @@ namespace DesktopAssistant
             AppConstants constants = AppConstants.getInstance();
 
             //2. 连接数据库
-
+            SqliteCommand sqlit = SqliteConnecter.getSqliteCommand();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

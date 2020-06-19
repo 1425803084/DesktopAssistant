@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using DesktopAssistant.service.task.impl;
 using DesktopAssistant.domain;
+using DesktopAssistant.bases.utils;
 
 namespace DesktopAssistant.app.task
 {
@@ -58,6 +59,15 @@ namespace DesktopAssistant.app.task
 
         }
 
+        public void AddTask()
+        {
+            Random random = new Random();
+            Task task = new Task();
+            task.Id = TimeUtils.DataTime2Stamp(DateTime.Now) - random.Next(1, 10000);
+            task.StartTime = TimeUtils.DataTime2Stamp(DateTime.Now);
+            task.EndTime = task.StartTime + 10000;
+
+        }
 
         public void ShowDetail()
         {

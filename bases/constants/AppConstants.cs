@@ -16,7 +16,7 @@ namespace DesktopAssistant.bases.constants
         public string dataBasePath;
 
         //系统数据库相对跟目录位置
-        private string dataBasePathRelative = @"/resource/db/info.db";
+        private string dataBasePathRelative = "info.db";
         
         //唯一实例
         private static AppConstants appConstans = new AppConstants();

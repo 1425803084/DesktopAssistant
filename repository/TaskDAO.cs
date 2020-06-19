@@ -32,7 +32,7 @@ namespace DesktopAssistant.repository
 
         public List<Task> getAll()
         {
-            cmd.CommandText = "SELECT task.* FROM task";
+            cmd.CommandText = "SELECT task.* FROM task where finish=false";
 
             SqliteDataReader reader = cmd.ExecuteReader();
 
@@ -42,7 +42,7 @@ namespace DesktopAssistant.repository
         }
 
 
-        public int insert(Task task)
+        public void insert(Task task)
         {
             cmd.CommandText = "INSERT INTO task" + "(" + TaskColumn + ")" 
                 + " VALUES(@Id, @StartTime, @EndTime, @Progress, @Describe, @Detail, @TagId)";
@@ -55,17 +55,12 @@ namespace DesktopAssistant.repository
             cmd.Parameters.AddWithValue("Detail", task.Detail);
             cmd.Parameters.AddWithValue("TagId", task.TagId);
 
-            SqliteDataReader reader = cmd.ExecuteReader();
-
-            using (reader)
-            {
-                return reader.GetInt32(0);
-            }
+            cmd.ExecuteNonQuery();
         }
 
         public void update(Task task)
         {
-            cmd.CommandText = "UPDATE take SET ";
+            cmd.CommandText = "UPDATE task SET ";
 
             if (task.StartTime != 0)
             {
@@ -102,6 +97,8 @@ namespace DesktopAssistant.repository
 
             cmd.CommandText += " WHERE id=@id";
             cmd.Parameters.AddWithValue("id", task.Id);
+
+            cmd.ExecuteNonQuery();
 
         }
 
