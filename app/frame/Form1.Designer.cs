@@ -28,23 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.tomatoTimer1 = new DesktopAssistant.app.tomato.TomatoTimer();
             this.SuspendLayout();
             // 
-            // panel1
+            // tomatoTimer1
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(752, 576);
-            this.panel1.TabIndex = 0;
+            this.tomatoTimer1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tomatoTimer1.BackgroundImage")));
+            this.tomatoTimer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tomatoTimer1.Location = new System.Drawing.Point(0, 3);
+            this.tomatoTimer1.Name = "tomatoTimer1";
+            this.tomatoTimer1.Size = new System.Drawing.Size(457, 702);
+            this.tomatoTimer1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 576);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(459, 705);
+            this.Controls.Add(this.tomatoTimer1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -53,6 +55,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private tomato.TomatoTimer tomatoTimer1;
     }
 }
