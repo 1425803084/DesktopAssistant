@@ -48,6 +48,7 @@
             this.progressRatio = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.update = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ddlTime
@@ -151,7 +152,7 @@
             // 
             // finish
             // 
-            this.finish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.finish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.finish.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(194)))), ((int)(((byte)(244)))));
             this.finish.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.finish.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -163,6 +164,7 @@
             this.finish.TabIndex = 18;
             this.finish.Text = "我已完成";
             this.finish.UseVisualStyleBackColor = false;
+            this.finish.Click += new System.EventHandler(this.finish_Click);
             // 
             // process
             // 
@@ -412,11 +414,28 @@
             this.label4.TabIndex = 29;
             this.label4.Text = "结束时间";
             // 
+            // update
+            // 
+            this.update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(194)))), ((int)(((byte)(244)))));
+            this.update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.update.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.update.ForeColor = System.Drawing.Color.BlueViolet;
+            this.update.Location = new System.Drawing.Point(103, 576);
+            this.update.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.update.Name = "update";
+            this.update.Size = new System.Drawing.Size(106, 41);
+            this.update.TabIndex = 30;
+            this.update.Text = "修改";
+            this.update.UseVisualStyleBackColor = false;
+            this.update.Click += new System.EventHandler(this.button1_Click);
+            // 
             // taskdetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.Controls.Add(this.update);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.progressRatio);
@@ -467,5 +486,6 @@
         public System.Windows.Forms.Label progressRatio;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Button update;
     }
 }

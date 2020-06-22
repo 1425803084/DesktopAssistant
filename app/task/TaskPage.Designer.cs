@@ -50,43 +50,40 @@ namespace DesktopAssistant.app.task
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskPage));
-            this.taskLabel1 = new DesktopAssistant.app.task.TaskLabel.TaskLabel();
             this.taskdetail1 = new DesktopAssistant.app.TaskDetail.taskdetail();
+            this.taskLabel1 = new DesktopAssistant.app.task.TaskLabel.TaskLabel();
             this.SuspendLayout();
-            // 
-            // taskLabel1
-            // 
-            this.taskLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.taskLabel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("taskLabel1.BackgroundImage")));
-            this.taskLabel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.taskLabel1.Location = new System.Drawing.Point(0, 0);
-            this.taskLabel1.Margin = new System.Windows.Forms.Padding(5);
-            this.taskLabel1.Name = "taskLabel1";
-            this.taskLabel1.Size = new System.Drawing.Size(487, 958);
-            this.taskLabel1.TabIndex = 0;
-            this.taskLabel1.Load += new System.EventHandler(this.taskLabel1_Load);
             // 
             // taskdetail1
             // 
             this.taskdetail1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("taskdetail1.BackgroundImage")));
-            this.taskdetail1.Location = new System.Drawing.Point(487, 0);
-            this.taskdetail1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.taskdetail1.MinimumSize = new System.Drawing.Size(453, 0);
+            this.taskdetail1.Location = new System.Drawing.Point(365, 0);
+            this.taskdetail1.Margin = new System.Windows.Forms.Padding(2);
+            this.taskdetail1.MinimumSize = new System.Drawing.Size(340, 0);
             this.taskdetail1.Name = "taskdetail1";
-            this.taskdetail1.Size = new System.Drawing.Size(503, 958);
+            this.taskdetail1.Size = new System.Drawing.Size(377, 766);
             this.taskdetail1.TabIndex = 1;
             this.taskdetail1.Load += new System.EventHandler(this.taskdetail1_Load);
             // 
+            // taskLabel1
+            // 
+            this.taskLabel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("taskLabel1.BackgroundImage")));
+            this.taskLabel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.taskLabel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.taskLabel1.Location = new System.Drawing.Point(0, 0);
+            this.taskLabel1.Name = "taskLabel1";
+            this.taskLabel1.Size = new System.Drawing.Size(368, 766);
+            this.taskLabel1.TabIndex = 2;
+            this.taskLabel1.Load += new System.EventHandler(this.taskLabel1_Load_1);
+            // 
             // TaskPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.taskdetail1);
             this.Controls.Add(this.taskLabel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Controls.Add(this.taskdetail1);
             this.Name = "TaskPage";
-            this.Size = new System.Drawing.Size(989, 958);
+            this.Size = new System.Drawing.Size(742, 766);
             this.Load += new System.EventHandler(this.TaskPage_Load);
             this.DoubleClick += new System.EventHandler(this.frmTopMost_DoubleClick);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseDown);
@@ -121,6 +118,8 @@ namespace DesktopAssistant.app.task
             pParent.fwsPrevious = pParent.WindowState;
 
             hidenTaskPage = new TaskPage(pParent);
+
+            CanPenetrate();
         }
 
         private void CanPenetrate()
@@ -232,8 +231,7 @@ namespace DesktopAssistant.app.task
             SwitchToMain();
 
         }
-
-        public TaskLabel.TaskLabel taskLabel1;
         public TaskDetail.taskdetail taskdetail1;
+        public TaskLabel.TaskLabel taskLabel1;
     }
 }

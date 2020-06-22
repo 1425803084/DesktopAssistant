@@ -10,32 +10,43 @@ using DesktopAssistant.service.task.impl;
 using DesktopAssistant.domain;
 using DesktopAssistant.bases.utils;
 using DesktopAssistant.app.page;
+using DesktopAssistant.repository;
 
 namespace DesktopAssistant.app.task
 {
     public partial class TaskPage : UserControl
     {
-
-        TaskServiceImpl taskService = TaskServiceImpl.getTaskService();
-
         public TaskPage()
         {
             InitializeComponent();
             this.taskdetail1.Visible = false;
             this.taskdetail1.Enabled = false;
             Size = new Size(this.taskLabel1.Size.Width, Size.Height);
-               
+
+            taskdetail1.finish.Click += FinishClick;
+            taskdetail1.update.Click += UpdateClick;
+
+            taskLabel1.button2.Click += AddNewTask;
+
         }
 
+
+        public void freshList()
+        {
+            TaskServiceImpl taskService = TaskServiceImpl.getTaskService();
+            List<domain.Task> taskList = taskService.getAll();
+
+            this.taskLabel1.taskList1.Clear();
+            
+            taskList.ForEach(t => {
+                this.taskLabel1.taskList1.AddTask(t, TaskClick);
+            });
+        }
 
 
         private void taskdetail1_Load(object sender, EventArgs e)
         {
-            List<domain.Task> taskList =  taskService.getAll();
-
-            taskList.ForEach(t => {
-                this.taskLabel1.taskList1.AddTask(t, TaskClick);
-            });
+            freshList();
         }
 
 
@@ -57,6 +68,7 @@ namespace DesktopAssistant.app.task
             else
             {
                 this.taskdetail1.SaveTask();
+                this.taskdetail1.task = null;
                 CloseDetail();
             }
 
@@ -64,18 +76,14 @@ namespace DesktopAssistant.app.task
 
         public void AddTask()
         {
-            Random random = new Random();
-            Task task = new Task();
-            task.Id = TimeUtils.DataTime2Stamp(DateTime.Now) - random.Next(1, 10000);
-            task.StartTime = TimeUtils.DataTime2Stamp(DateTime.Now);
-            task.EndTime = task.StartTime + 10000;
-
+            
         }
 
         public void ShowDetail()
         {
             this.taskdetail1.Visible = true;
             this.taskdetail1.Enabled = true;
+            this.taskdetail1.fresh();
             Size = new Size(this.taskLabel1.Size.Width+this.taskdetail1.Size.Width, Size.Height);
         }
 
@@ -95,5 +103,51 @@ namespace DesktopAssistant.app.task
         {
 
         }
+
+        private void taskLabel1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        public void FinishClick(object sender, EventArgs e)
+        {
+            this.taskdetail1.task.Finish = true;
+            TaskDAO taskDAO = new TaskDAO();
+            taskDAO.update(this.taskdetail1.task);
+
+            CloseDetail();
+        }
+
+        public void UpdateClick(object sender, EventArgs e)
+        {
+            this.taskdetail1.SaveTask();
+            TaskDAO taskDAO = new TaskDAO();
+            taskDAO.update(this.taskdetail1.task);
+
+            freshList();
+
+            CloseDetail();
+        }
+
+        public void AddNewTask(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            domain.Task task = new domain.Task();
+            task.Id = TimeUtils.DataTime2Stamp(DateTime.Now) - random.Next(1, 10000);
+            task.StartTime = TimeUtils.DataTime2Stamp(DateTime.Now);
+            task.EndTime = task.StartTime + 10000;
+            task.TagId = 1;
+            task.Progress = 10;
+            task.Describe = "";
+            task.Detail = "";
+
+            TaskDAO taskDAO = new TaskDAO();
+            taskDAO.insert(task);
+
+            this.taskdetail1.task = task;
+            ShowDetail();
+        }
+
+
     }
 }

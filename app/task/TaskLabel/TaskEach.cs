@@ -14,18 +14,21 @@ namespace DesktopAssistant.app.task.TaskLabel
     public partial class TaskEach : UserControl
     {
 
-        public Task TaskIn 
+        public Task TaskIn;
+
+        public void setTask(Task task)
         {
-            get { return TaskIn; }
-            set
-            {
-                TaskIn = value;
-                this.describe.Text = value.Describe;
-                this.endTime.Text = TimeUtils.Stamp2String(value.EndTime);
-                this.progress.Text = string.Format("进度：{0}%", value.Progress);
-                
-            }
+            TaskIn = task;
+            this.describe.Text = task.Describe;
+            this.endTime.Text = TimeUtils.Stamp2String(task.EndTime);
+            this.progress.Text = string.Format("进度：{0}%", task.Progress);
         }
+
+        public Task getTask()
+        {
+            return TaskIn;
+        }
+
 
         public TaskEach()
         {

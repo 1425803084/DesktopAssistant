@@ -43,7 +43,8 @@ namespace DesktopAssistant.app.page
             this.GameMaster = new System.Windows.Forms.CheckBox();
             this.TClock = new System.Windows.Forms.Button();
             this.ListSet = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.taskPage1 = new DesktopAssistant.app.task.TaskPage();
+            this.tomatoTimer1 = new DesktopAssistant.app.tomato.TomatoTimer();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,8 +60,9 @@ namespace DesktopAssistant.app.page
             this.panel1.Controls.Add(this.TClock);
             this.panel1.Controls.Add(this.ListSet);
             this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(248, 705);
+            this.panel1.Size = new System.Drawing.Size(247, 686);
             this.panel1.TabIndex = 0;
             // 
             // DesktopPet
@@ -69,9 +71,10 @@ namespace DesktopAssistant.app.page
             this.DesktopPet.BackColor = System.Drawing.Color.Transparent;
             this.DesktopPet.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesktopPet.ForeColor = System.Drawing.Color.SlateBlue;
-            this.DesktopPet.Location = new System.Drawing.Point(22, 554);
+            this.DesktopPet.Location = new System.Drawing.Point(16, 565);
+            this.DesktopPet.Margin = new System.Windows.Forms.Padding(2);
             this.DesktopPet.Name = "DesktopPet";
-            this.DesktopPet.Size = new System.Drawing.Size(188, 42);
+            this.DesktopPet.Size = new System.Drawing.Size(141, 34);
             this.DesktopPet.TabIndex = 6;
             this.DesktopPet.Text = "桌面宠物";
             this.DesktopPet.UseVisualStyleBackColor = false;
@@ -83,9 +86,10 @@ namespace DesktopAssistant.app.page
             this.SelfStart.BackColor = System.Drawing.Color.Transparent;
             this.SelfStart.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.SelfStart.ForeColor = System.Drawing.Color.SlateBlue;
-            this.SelfStart.Location = new System.Drawing.Point(23, 602);
+            this.SelfStart.Location = new System.Drawing.Point(17, 604);
+            this.SelfStart.Margin = new System.Windows.Forms.Padding(2);
             this.SelfStart.Name = "SelfStart";
-            this.SelfStart.Size = new System.Drawing.Size(188, 42);
+            this.SelfStart.Size = new System.Drawing.Size(141, 34);
             this.SelfStart.TabIndex = 5;
             this.SelfStart.Text = "开机自启";
             this.SelfStart.UseVisualStyleBackColor = false;
@@ -97,9 +101,10 @@ namespace DesktopAssistant.app.page
             this.GameMaster.BackColor = System.Drawing.Color.Transparent;
             this.GameMaster.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.GameMaster.ForeColor = System.Drawing.Color.SlateBlue;
-            this.GameMaster.Location = new System.Drawing.Point(22, 650);
+            this.GameMaster.Location = new System.Drawing.Point(16, 642);
+            this.GameMaster.Margin = new System.Windows.Forms.Padding(2);
             this.GameMaster.Name = "GameMaster";
-            this.GameMaster.Size = new System.Drawing.Size(188, 42);
+            this.GameMaster.Size = new System.Drawing.Size(141, 34);
             this.GameMaster.TabIndex = 4;
             this.GameMaster.Text = "游戏监管";
             this.GameMaster.UseVisualStyleBackColor = false;
@@ -109,9 +114,10 @@ namespace DesktopAssistant.app.page
             // 
             this.TClock.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TClock.BackgroundImage")));
             this.TClock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TClock.Location = new System.Drawing.Point(3, 78);
+            this.TClock.Location = new System.Drawing.Point(2, 62);
+            this.TClock.Margin = new System.Windows.Forms.Padding(2);
             this.TClock.Name = "TClock";
-            this.TClock.Size = new System.Drawing.Size(248, 83);
+            this.TClock.Size = new System.Drawing.Size(186, 66);
             this.TClock.TabIndex = 3;
             this.TClock.UseVisualStyleBackColor = true;
             this.TClock.Click += new System.EventHandler(this.TClock_Click);
@@ -121,31 +127,41 @@ namespace DesktopAssistant.app.page
             this.ListSet.BackColor = System.Drawing.Color.Plum;
             this.ListSet.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ListSet.BackgroundImage")));
             this.ListSet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ListSet.Location = new System.Drawing.Point(3, 0);
+            this.ListSet.Location = new System.Drawing.Point(2, 0);
+            this.ListSet.Margin = new System.Windows.Forms.Padding(2);
             this.ListSet.Name = "ListSet";
-            this.ListSet.Size = new System.Drawing.Size(248, 83);
+            this.ListSet.Size = new System.Drawing.Size(186, 66);
             this.ListSet.TabIndex = 2;
             this.ListSet.UseVisualStyleBackColor = false;
             this.ListSet.Click += new System.EventHandler(this.ListSet_Click);
             // 
-            // panel2
+            // taskPage1
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.Location = new System.Drawing.Point(255, 1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(692, 705);
-            this.panel2.TabIndex = 1;
+            this.taskPage1.Location = new System.Drawing.Point(184, -1);
+            this.taskPage1.Name = "taskPage1";
+            this.taskPage1.Size = new System.Drawing.Size(363, 688);
+            this.taskPage1.TabIndex = 1;
+            // 
+            // tomatoTimer1
+            // 
+            this.tomatoTimer1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tomatoTimer1.BackgroundImage")));
+            this.tomatoTimer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tomatoTimer1.Location = new System.Drawing.Point(184, -1);
+            this.tomatoTimer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tomatoTimer1.Name = "tomatoTimer1";
+            this.tomatoTimer1.Size = new System.Drawing.Size(373, 686);
+            this.tomatoTimer1.TabIndex = 2;
             // 
             // mainFrame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(946, 705);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(964, 686);
+            this.Controls.Add(this.taskPage1);
+            this.Controls.Add(this.tomatoTimer1);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "mainFrame";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.mainFrame_Load);
@@ -161,7 +177,6 @@ namespace DesktopAssistant.app.page
         private System.Windows.Forms.Button TClock;
         private System.Windows.Forms.CheckBox GameMaster;
         private System.Windows.Forms.CheckBox SelfStart;
-        private System.Windows.Forms.Panel panel2;
         private Class1 class1 = new Class1();
         private examine examine = new examine();
         private System.Windows.Forms.CheckBox DesktopPet;
@@ -197,18 +212,25 @@ namespace DesktopAssistant.app.page
 
         private void ListSet_Click(object sender, EventArgs e)
         {
-            TaskPage taskPage1 = new TaskPage();
-            this.panel2.Controls.Clear();
-            this.panel2.Controls.Add(taskPage);
-            this.panel2.Show();
+            this.taskPage1.Visible = true;
+            this.taskPage1.Enabled = true;
+            this.tomatoTimer1.Visible = false;
+            this.tomatoTimer1.Enabled = false;
+            this.taskPage1.freshList();
+            //this.panel2.Controls.Clear();
+            //this.panel2.Controls.Add(taskPage);
+            //this.panel2.Show();
         }
 
         private void TClock_Click(object sender, EventArgs e)
         {
-            TomatoTimer tomatoTimer = new TomatoTimer();
-            this.panel2.Controls.Clear();
-            this.panel2.Controls.Add(tomatoTimer);
-            this.panel2.Show();
+            this.taskPage1.Visible = false;
+            this.taskPage1.Enabled = false;
+            this.tomatoTimer1.Visible = true;
+            this.tomatoTimer1.Enabled = true;
+            //this.panel2.Controls.Clear();
+            //this.panel2.Controls.Add(tomatoTimer);
+            //this.panel2.Show();
         }
 
 
@@ -248,5 +270,8 @@ namespace DesktopAssistant.app.page
 
 
         }
+
+        private TaskPage taskPage1;
+        private TomatoTimer tomatoTimer1;
     }
 }

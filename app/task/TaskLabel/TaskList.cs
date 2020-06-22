@@ -23,8 +23,8 @@ namespace DesktopAssistant.app.task.TaskLabel
         {
             TaskEach taskEach = new TaskEach();
 
-            taskEach.TaskIn = task;
-            taskEach.Anchor = this.taskEach1.Anchor = ((((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right)));
+            taskEach.setTask(task);
+            taskEach.Anchor = ((((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right)));
             taskEach.BackColor = Color.Transparent;
             taskEach.BackgroundImageLayout = ImageLayout.Stretch;
             taskEach.Name = "taskEach1";
@@ -36,6 +36,12 @@ namespace DesktopAssistant.app.task.TaskLabel
             this.Controls.Add(taskEach);
             this.tasks.Add(taskEach);
 
+        }
+
+        public void Clear()
+        {
+            this.Controls.Clear();
+            this.tasks.Clear();
         }
 
         public void AddTaskList(List<Task> taskList)

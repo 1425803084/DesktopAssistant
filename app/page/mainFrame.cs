@@ -15,6 +15,8 @@ namespace DesktopAssistant.app.page
         public mainFrame()
         {
             InitializeComponent();
+            this.taskPage1.freshList();
+
         }
 
 
