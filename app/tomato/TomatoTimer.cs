@@ -12,7 +12,8 @@ namespace DesktopAssistant.app.tomato
 {
     public partial class TomatoTimer : UserControl
     {
-        int min = 30;
+        
+        //int min = 30;
         int sec = 0;
         int flag = 0;
         public TomatoTimer()
@@ -21,18 +22,16 @@ namespace DesktopAssistant.app.tomato
         }
 
         private void TomatoTimer_Load(object sender, EventArgs e)
-        {
-
-           
+        { 
             Pause.Hide();
             reStart.Hide();
-
         }
 
         private void Start_Click(object sender, EventArgs e)
         {
-            min = 30;
-            sec = 0;
+            Hour.Text = HourSelect.Text;
+            Min.Text = MinuteSelect.Text;
+            Second.Text="0";
 
             Start.Hide();
             Pause.Show();
@@ -42,22 +41,23 @@ namespace DesktopAssistant.app.tomato
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            sec--;
-            if (sec < 0)
+            Second.Text = (int.Parse(Second.Text) - 1).ToString();
+            if (int.Parse(Second.Text) < 0)
             {
-                sec = 59;
-                min--;
+                Second.Text = "59";
+                Min.Text = (int.Parse(Min.Text) - 1).ToString();
             }
-            if (min < 0)
+            if (int.Parse(Min.Text) < 0)
             {
+                Min.Text = "59";
+                Hour.Text = (int.Parse(Hour.Text) - 1).ToString();
+            }
+            if (int.Parse(Hour.Text)<0)
+            {
+                Second.Text = "0";
+                Min.Text = "0";
+                Hour.Text = "0";
                 timer1.Stop();
-                Min.Text = "00";
-                Second.Text = "00";
-            }
-            else
-            {
-                Second.Text = sec.ToString("D2");
-                Min.Text = min.ToString("D2");
             }
         }
 
@@ -80,13 +80,11 @@ namespace DesktopAssistant.app.tomato
         private void reStart_Click(object sender, EventArgs e)
         {
             timer1.Stop();
-            Min.Text = "00";
-            Second.Text = "00";
+            Min.Text = "0";
+            Second.Text = "0";
             Pause.Hide();
             reStart.Hide();
             Start.Show();
-            min = 0;
-            sec = 0;
         }
     }
 }
