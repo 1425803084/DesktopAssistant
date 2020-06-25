@@ -151,6 +151,12 @@
     <Compile Include="app\page\mainFrame.Designer.cs">
       <DependentUpon>mainFrame.cs</DependentUpon>
     </Compile>
+    <Compile Include="app\page\suspensionFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="app\page\suspensionFrame.Designer.cs">
+      <DependentUpon>suspensionFrame.cs</DependentUpon>
+    </Compile>
     <Compile Include="app\page\Task.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -198,6 +204,12 @@
     </Compile>
     <Compile Include="app\frame\Frame.Designer.cs">
       <DependentUpon>Frame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="app\page\ToMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="app\page\ToMain.Designer.cs">
+      <DependentUpon>ToMain.cs</DependentUpon>
     </Compile>
     <Compile Include="app\task\TaskLabel\TaskEach.cs">
       <SubType>UserControl</SubType>
@@ -258,6 +270,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="app\controls\TrackBar.resx">
       <DependentUpon>TrackBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="app\page\suspensionFrame.resx">
+      <DependentUpon>suspensionFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="app\page\ToMain.resx">
+      <DependentUpon>ToMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="app\task\TaskDetail\taskdetail.resx">
       <DependentUpon>taskdetail.cs</DependentUpon>

@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace DesktopAssistant.app.page
 {
-    public partial class mainFrame : Form
+    public partial class ToMain : Form
     {
-        public mainFrame()
+        public ToMain()
         {
             InitializeComponent();
-            this.taskPage1.freshList();
-
         }
-
-
     }
-
-
 }
-
-

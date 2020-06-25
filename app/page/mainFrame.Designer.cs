@@ -141,6 +141,8 @@ namespace DesktopAssistant.app.page
             this.taskPage1.Name = "taskPage1";
             this.taskPage1.Size = new System.Drawing.Size(363, 688);
             this.taskPage1.TabIndex = 1;
+
+
             // 
             // tomatoTimer1
             // 
@@ -181,7 +183,8 @@ namespace DesktopAssistant.app.page
         private examine examine = new examine();
         private System.Windows.Forms.CheckBox DesktopPet;
         public FormWindowState fwsPrevious;
-        private TaskPage taskPage;
+        private suspensionFrame suspensionFrame;
+
 
         private void mainFrame_Load(object sender, System.EventArgs e)
 
@@ -190,12 +193,12 @@ namespace DesktopAssistant.app.page
             // Save window state
 
             fwsPrevious = this.WindowState;
-
+            suspensionFrame = new suspensionFrame(this);
+            this.taskPage1.taskLabel1.button1.Click += suspensionFrame.hide;
 
 
             // Create top most window
 
-            taskPage = new TaskPage(this);
 
 
         }
@@ -271,7 +274,7 @@ namespace DesktopAssistant.app.page
 
         }
 
-        private TaskPage taskPage1;
+        public TaskPage taskPage1;
         private TomatoTimer tomatoTimer1;
     }
 }

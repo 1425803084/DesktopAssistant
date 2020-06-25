@@ -24,7 +24,6 @@ namespace DesktopAssistant.app.task.TaskLabel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ;
         }
     }
 }

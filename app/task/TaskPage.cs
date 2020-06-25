@@ -36,7 +36,7 @@ namespace DesktopAssistant.app.task
             TaskServiceImpl taskService = TaskServiceImpl.getTaskService();
             List<domain.Task> taskList = taskService.getAll();
 
-            this.taskLabel1.taskList1.Clear();
+            //this.taskLabel1.taskList1.Clear();
             
             taskList.ForEach(t => {
                 this.taskLabel1.taskList1.AddTask(t, TaskClick);

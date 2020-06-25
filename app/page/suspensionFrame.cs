@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace DesktopAssistant.app.page
 {
-    public partial class mainFrame : Form
+    public partial class suspensionFrame : Form
     {
-        public mainFrame()
+        public suspensionFrame()
         {
             InitializeComponent();
-            this.taskPage1.freshList();
-
         }
-
-
     }
-
-
 }
-
-
