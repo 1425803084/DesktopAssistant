@@ -85,8 +85,11 @@
             // 
             // taskList1
             // 
-            this.taskList1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.taskList1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.taskList1.AutoScroll = true;
+            this.taskList1.AutoScrollMinSize = new System.Drawing.Size(0, 600);
             this.taskList1.BackColor = System.Drawing.Color.Transparent;
             this.taskList1.Location = new System.Drawing.Point(37, 105);
             this.taskList1.Name = "taskList1";

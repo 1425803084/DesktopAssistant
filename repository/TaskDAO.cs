@@ -97,7 +97,10 @@ namespace DesktopAssistant.repository
                 cmd.CommandText += "tag_id=@TagId,";
                 cmd.Parameters.Add("@TagId", SqliteType.Integer).Value = task.TagId;
             }
-
+            
+            cmd.CommandText += "finish=@Finish,";
+            cmd.Parameters.Add("@Finish", SqliteType.Integer).Value = task.Finish;
+            
             cmd.CommandText = cmd.CommandText.Substring(0, cmd.CommandText.Length-1);
 
             cmd.CommandText += " WHERE id=@id";

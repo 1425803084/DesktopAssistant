@@ -61,7 +61,7 @@ namespace DesktopAssistant.app.page
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 761);
+            this.panel1.Size = new System.Drawing.Size(188, 833);
             this.panel1.TabIndex = 0;
             // 
             // DesktopPet
@@ -70,7 +70,7 @@ namespace DesktopAssistant.app.page
             this.DesktopPet.BackColor = System.Drawing.Color.Transparent;
             this.DesktopPet.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesktopPet.ForeColor = System.Drawing.Color.SlateBlue;
-            this.DesktopPet.Location = new System.Drawing.Point(16, 640);
+            this.DesktopPet.Location = new System.Drawing.Point(16, 712);
             this.DesktopPet.Margin = new System.Windows.Forms.Padding(2);
             this.DesktopPet.Name = "DesktopPet";
             this.DesktopPet.Size = new System.Drawing.Size(141, 34);
@@ -85,7 +85,7 @@ namespace DesktopAssistant.app.page
             this.SelfStart.BackColor = System.Drawing.Color.Transparent;
             this.SelfStart.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.SelfStart.ForeColor = System.Drawing.Color.SlateBlue;
-            this.SelfStart.Location = new System.Drawing.Point(17, 679);
+            this.SelfStart.Location = new System.Drawing.Point(17, 751);
             this.SelfStart.Margin = new System.Windows.Forms.Padding(2);
             this.SelfStart.Name = "SelfStart";
             this.SelfStart.Size = new System.Drawing.Size(141, 34);
@@ -100,7 +100,7 @@ namespace DesktopAssistant.app.page
             this.GameMaster.BackColor = System.Drawing.Color.Transparent;
             this.GameMaster.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.GameMaster.ForeColor = System.Drawing.Color.SlateBlue;
-            this.GameMaster.Location = new System.Drawing.Point(16, 717);
+            this.GameMaster.Location = new System.Drawing.Point(16, 789);
             this.GameMaster.Margin = new System.Windows.Forms.Padding(2);
             this.GameMaster.Name = "GameMaster";
             this.GameMaster.Size = new System.Drawing.Size(141, 34);
@@ -141,17 +141,15 @@ namespace DesktopAssistant.app.page
             | System.Windows.Forms.AnchorStyles.Right)));
             this.taskPage1.Location = new System.Drawing.Point(189, 1);
             this.taskPage1.Name = "taskPage1";
-            this.taskPage1.Size = new System.Drawing.Size(843, 761);
+            this.taskPage1.Size = new System.Drawing.Size(1104, 833);
             this.taskPage1.TabIndex = 1;
-
-
             // 
             // tomatoTimer1
             // 
             this.tomatoTimer1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tomatoTimer1.BackgroundImage")));
             this.tomatoTimer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tomatoTimer1.Location = new System.Drawing.Point(184, -1);
-            this.tomatoTimer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tomatoTimer1.Margin = new System.Windows.Forms.Padding(2);
             this.tomatoTimer1.Name = "tomatoTimer1";
             this.tomatoTimer1.Size = new System.Drawing.Size(373, 686);
             this.tomatoTimer1.TabIndex = 2;
@@ -161,7 +159,7 @@ namespace DesktopAssistant.app.page
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1030, 761);
+            this.ClientSize = new System.Drawing.Size(1291, 833);
             this.Controls.Add(this.taskPage1);
             this.Controls.Add(this.tomatoTimer1);
             this.Controls.Add(this.panel1);
@@ -195,12 +193,9 @@ namespace DesktopAssistant.app.page
             // Save window state
             fwsPrevious = this.WindowState;
             suspensionFrame = new suspensionFrame(this);
-            this.taskPage1.taskLabel1.button1.Click += suspensionFrame.hide;
-
+            this.taskPage1.taskLabel.button1.Click += suspensionFrame.hide;
 
             // Create top most window
-
-
         }
 
         public void RestoreWindow()

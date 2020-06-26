@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskEach));
             this.describe = new System.Windows.Forms.Label();
             this.endTime = new System.Windows.Forms.Label();
             this.progress = new System.Windows.Forms.Label();
@@ -74,7 +73,7 @@
             // 
             // select
             // 
-            this.select.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("select.BackgroundImage")));
+            this.select.BackgroundImage = global::DesktopAssistant.Properties.Resources.selectUnSelect;
             this.select.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.select.Location = new System.Drawing.Point(15, 16);
             this.select.Name = "select";

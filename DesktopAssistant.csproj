@@ -167,12 +167,6 @@
     <Compile Include="app\page\suspensionFrame.Designer.cs">
       <DependentUpon>suspensionFrame.cs</DependentUpon>
     </Compile>
-    <Compile Include="app\page\Task.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="app\page\Task.Designer.cs">
-      <DependentUpon>Task.cs</DependentUpon>
-    </Compile>
     <Compile Include="app\controls\Select.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -326,7 +320,6 @@
     <EmbeddedResource Include="app\page\ToMain.resx">
       <DependentUpon>ToMain.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="app\task\TaskDetail\ProgressBar.resx">
       <DependentUpon>ProgressBar.cs</DependentUpon>
     </EmbeddedResource>
@@ -420,6 +413,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PHLTrackBar.dll" />
+    <None Include="Resources\eglass-tag_fix.png" />
+    <None Include="Resources\canlender_out.png" />
+    <None Include="Resources\canlender_fixed.png" />
+    <None Include="Resources\eglass-tag.png" />
+    <None Include="Resources\canlender_defalut.png" />
     <None Include="Resources\rubbishBin.PNG" />
     <None Include="Resources\back.PNG" />
     <None Include="Resources\delete.PNG" />

@@ -97,7 +97,7 @@ namespace DesktopAssistant.app.task
 
         #endregion
 
-        private TaskLabel.TaskLabel taskLabel;
-        private app.TaskDetail.Taskdetail taskDetail;
+        public TaskLabel.TaskLabel taskLabel;
+        public app.TaskDetail.Taskdetail taskDetail;
     }
 }

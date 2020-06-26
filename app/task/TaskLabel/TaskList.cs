@@ -16,6 +16,8 @@ namespace DesktopAssistant.app.task.TaskLabel
 
         public TaskList()
         {
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.AllPaintingInWmPaint, true);
+            this.UpdateStyles();
             InitializeComponent();
         }
 
@@ -26,7 +28,7 @@ namespace DesktopAssistant.app.task.TaskLabel
             taskEach.setTask(task);
             taskEach.Anchor = ((((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right)));
             taskEach.BackgroundImageLayout = ImageLayout.Stretch;
-            taskEach.Size = new Size(this.Size.Width , 60);
+            taskEach.Size = new Size(this.Size.Width-12 , 60);
             taskEach.Location = new Point(0, 10 + (60+5) * tasks.Count);
             taskEach.TabIndex = 0;
             taskEach.Click += eventHandler;

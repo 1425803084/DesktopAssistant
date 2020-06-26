@@ -16,11 +16,13 @@ namespace DesktopAssistant.app.task.TaskLabel
 {
     public partial class TaskEach : UserControl
     {
-
         public Task TaskIn;
 
         public TaskEach()
         {
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.AllPaintingInWmPaint, true);
+            this.UpdateStyles();
+
             InitializeComponent();
 
             //背景颜色

@@ -198,11 +198,11 @@
             // tagImage
             // 
             this.tagImage.BackColor = System.Drawing.Color.Transparent;
-            this.tagImage.BackgroundImage = global::DesktopAssistant.Properties.Resources.tag;
+            this.tagImage.BackgroundImage = global::DesktopAssistant.Properties.Resources.eglass_tag;
             this.tagImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tagImage.Location = new System.Drawing.Point(11, 12);
+            this.tagImage.Location = new System.Drawing.Point(14, 15);
             this.tagImage.Name = "tagImage";
-            this.tagImage.Size = new System.Drawing.Size(35, 33);
+            this.tagImage.Size = new System.Drawing.Size(27, 26);
             this.tagImage.TabIndex = 3;
             // 
             // timeDelete
@@ -217,11 +217,12 @@
             // 
             // timeImage
             // 
-            this.timeImage.BackgroundImage = global::DesktopAssistant.Properties.Resources.canlender;
+            this.timeImage.BackColor = System.Drawing.Color.Transparent;
+            this.timeImage.BackgroundImage = global::DesktopAssistant.Properties.Resources.canlender_defalut;
             this.timeImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.timeImage.Location = new System.Drawing.Point(10, 11);
+            this.timeImage.Location = new System.Drawing.Point(12, 13);
             this.timeImage.Name = "timeImage";
-            this.timeImage.Size = new System.Drawing.Size(36, 32);
+            this.timeImage.Size = new System.Drawing.Size(28, 26);
             this.timeImage.TabIndex = 2;
             // 
             // Taskdetail

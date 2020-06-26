@@ -27,7 +27,7 @@ namespace DesktopAssistant.app.TaskDetail
 
             this.taskTextBox1.detail.LostFocus += Detail_LostFocus;
             this.taskTextBox1.detail.GotFocus += Detail_GotFocus;
-            this.tagLabel.Click += TagLabel_Click;
+            this.tagPanel.Click += TagPanel_Click;
 
             this.progressBar.phlTrackBar1.TrackBar += PhlTrackBar1_TrackBar;
             this.progressBar.phlTrackBar1.LostFocus += PhlTrackBar1_LostFocus;
@@ -90,9 +90,10 @@ namespace DesktopAssistant.app.TaskDetail
             this.tagSelectList.Enabled = false;
         }
 
-        private void TagLabel_Click(object sender, EventArgs e)
+        private void TagPanel_Click(object sender, EventArgs e)
         {
             tagSelectList.fresh(tagClick);
+            tagSelectList.VerticalScroll.Visible = false;
             this.tagSelectList.Visible = true;
             this.tagSelectList.Enabled = true;
             this.tagSelectList.Focus();
@@ -180,15 +181,17 @@ namespace DesktopAssistant.app.TaskDetail
                 string month = dateTime.Month.ToString();
                 string week = dateTime.DayOfWeek.ToString();
 
-                this.timeLabel.Text = String.Format("{0}月{1}日, 周{2} 到期", month, day, week);
+                this.timeLabel.Text = String.Format("{0}月{1}日, {2} 到期", month, day, week);
 
                 if (dateTime < DateTime.Now)
                 {
                     this.timeLabel.ForeColor = Color.FromArgb(227, 87, 89);
+                    this.timeImage.BackgroundImage = Properties.Resources.canlender_out;
                 }
                 else
                 {
                     this.timeLabel.ForeColor = Color.FromArgb(55, 97, 241);
+                    this.timeImage.BackgroundImage = Properties.Resources.canlender_fixed;
                 }
 
                 this.timeDelete.Enabled = true;
@@ -200,6 +203,7 @@ namespace DesktopAssistant.app.TaskDetail
                 this.timeDelete.Visible = false;
                 this.timeLabel.ForeColor = SystemColors.GrayText;
                 this.timeLabel.Text = "添加截止时间";
+                this.timeImage.BackgroundImage = Properties.Resources.canlender_defalut;
             }
             
         }
@@ -212,14 +216,16 @@ namespace DesktopAssistant.app.TaskDetail
 
                 this.tagLabel.Text = tag.Name;
                 this.tagLabel.ForeColor = Color.FromArgb(55, 97, 241);
+                this.tagImage.BackgroundImage = Properties.Resources.eglass_tag_fix;
 
-                this.timeDelete.Enabled = true;
-                this.timeDelete.Visible = true;
+                this.tagDelete.Enabled = true;
+                this.tagDelete.Visible = true;
             }
             else
             {
                 this.timeLabel.ForeColor = SystemColors.GrayText;
                 this.timeLabel.Text = "添加任务标记";
+                this.tagImage.BackgroundImage = Properties.Resources.eglass_tag;
             }
             
         }
@@ -260,8 +266,9 @@ namespace DesktopAssistant.app.TaskDetail
 
         private void tagDelete_Click(object sender, EventArgs e)
         {
-            this.timeLabel.ForeColor = SystemColors.GrayText;
-            this.timeLabel.Text = "添加任务标记";
+            this.tagLabel.ForeColor = SystemColors.GrayText;
+            this.tagLabel.Text = "添加任务标记";
+            this.tagImage.BackgroundImage = Properties.Resources.eglass_tag;
             this.tagDelete.Enabled = false;
             this.tagDelete.Visible = false;
 
@@ -273,6 +280,7 @@ namespace DesktopAssistant.app.TaskDetail
         {
             this.timeLabel.ForeColor = SystemColors.GrayText;
             this.timeLabel.Text = "添加截止时间";
+            this.timeImage.BackgroundImage = Properties.Resources.canlender_defalut;
             this.timeDelete.Enabled = false;
             this.timeDelete.Visible = false;
 

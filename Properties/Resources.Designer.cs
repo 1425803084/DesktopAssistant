@@ -133,6 +133,36 @@ namespace DesktopAssistant.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap canlender_defalut {
+            get {
+                object obj = ResourceManager.GetObject("canlender_defalut", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap canlender_fixed {
+            get {
+                object obj = ResourceManager.GetObject("canlender_fixed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap canlender_out {
+            get {
+                object obj = ResourceManager.GetObject("canlender_out", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap delete {
             get {
                 object obj = ResourceManager.GetObject("delete", resourceCulture);
@@ -156,6 +186,26 @@ namespace DesktopAssistant.Properties {
         internal static System.Drawing.Bitmap EachTaskBackgroundSelect {
             get {
                 object obj = ResourceManager.GetObject("EachTaskBackgroundSelect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap eglass_tag {
+            get {
+                object obj = ResourceManager.GetObject("eglass-tag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap eglass_tag_fix {
+            get {
+                object obj = ResourceManager.GetObject("eglass-tag_fix", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

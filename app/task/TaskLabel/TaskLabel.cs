@@ -29,6 +29,9 @@ namespace DesktopAssistant.app.task.TaskLabel
             string month = dateNow.Month.ToString();
 
             this.timeText.Text = month + "月" + day + "日" + ", " + "周" + week ;
+
+            this.taskList1.VerticalScroll.Visible = true;
+            this.taskList1.HorizontalScroll.Visible = true;
         }
 
 

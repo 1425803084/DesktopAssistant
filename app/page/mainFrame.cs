@@ -18,12 +18,11 @@ namespace DesktopAssistant.app.page
             this.UpdateStyles();
 
             InitializeComponent();
-        }
 
-        private void taskPage1_Load(object sender, EventArgs e)
-        {
             this.taskPage1.freshList();
         }
+
+ 
     }
 
 
