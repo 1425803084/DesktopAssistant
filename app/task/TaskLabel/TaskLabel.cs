@@ -37,6 +37,8 @@ namespace DesktopAssistant.app.task.TaskLabel
             this.taskAddNew.Focus();
         }
 
- 
+        private void button1_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

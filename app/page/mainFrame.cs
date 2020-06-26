@@ -25,4 +25,8 @@ namespace DesktopAssistant.app.page
             this.taskPage1.freshList();
         }
     }
+
+
 }
+
+

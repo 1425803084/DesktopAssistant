@@ -44,6 +44,7 @@ namespace DesktopAssistant.app.page
             this.TClock = new System.Windows.Forms.Button();
             this.ListSet = new System.Windows.Forms.Button();
             this.taskPage1 = new DesktopAssistant.app.task.TaskPage();
+            this.tomatoTimer1 = new DesktopAssistant.app.tomato.TomatoTimer();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -142,7 +143,18 @@ namespace DesktopAssistant.app.page
             this.taskPage1.Name = "taskPage1";
             this.taskPage1.Size = new System.Drawing.Size(843, 761);
             this.taskPage1.TabIndex = 1;
-            this.taskPage1.Load += new System.EventHandler(this.taskPage1_Load);
+
+
+            // 
+            // tomatoTimer1
+            // 
+            this.tomatoTimer1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tomatoTimer1.BackgroundImage")));
+            this.tomatoTimer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tomatoTimer1.Location = new System.Drawing.Point(184, -1);
+            this.tomatoTimer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tomatoTimer1.Name = "tomatoTimer1";
+            this.tomatoTimer1.Size = new System.Drawing.Size(373, 686);
+            this.tomatoTimer1.TabIndex = 2;
             // 
             // mainFrame
             // 
@@ -151,6 +163,7 @@ namespace DesktopAssistant.app.page
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1030, 761);
             this.Controls.Add(this.taskPage1);
+            this.Controls.Add(this.tomatoTimer1);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "mainFrame";
@@ -173,16 +186,20 @@ namespace DesktopAssistant.app.page
         private examine examine = new examine();
         private System.Windows.Forms.CheckBox DesktopPet;
         public FormWindowState fwsPrevious;
-        private TaskPage taskPage;
+        private suspensionFrame suspensionFrame;
+
 
         private void mainFrame_Load(object sender, System.EventArgs e)
         {
 
             // Save window state
             fwsPrevious = this.WindowState;
+            suspensionFrame = new suspensionFrame(this);
+            this.taskPage1.taskLabel1.button1.Click += suspensionFrame.hide;
+
 
             // Create top most window
-            taskPage = new TaskPage(this);
+
 
         }
 
@@ -257,6 +274,7 @@ namespace DesktopAssistant.app.page
 
         }
 
-        private TaskPage taskPage1;
+        public TaskPage taskPage1;
+        private TomatoTimer tomatoTimer1;
     }
 }
