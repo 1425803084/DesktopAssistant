@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Name = "TaskList";
-            this.Size = new System.Drawing.Size(356, 524);
+            this.Size = new System.Drawing.Size(453, 674);
             this.ResumeLayout(false);
 
         }

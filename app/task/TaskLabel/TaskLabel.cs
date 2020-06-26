@@ -14,17 +14,29 @@ namespace DesktopAssistant.app.task.TaskLabel
     {
         public TaskLabel()
         {
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.AllPaintingInWmPaint, true);
+            this.UpdateStyles();
+
             InitializeComponent();
+
+            //绑定点击事件
+            this.GotFocus += self_OnFocus;
+
+            //刷新date
+            DateTime dateNow = DateTime.Now;
+            string week = dateNow.DayOfWeek.ToString();
+            string day = dateNow.Day.ToString();
+            string month = dateNow.Month.ToString();
+
+            this.timeText.Text = month + "月" + day + "日" + ", " + "周" + week ;
         }
 
-        private void TaskLabel_Load(object sender, EventArgs e)
+
+        private void self_OnFocus(object sender, EventArgs e)
         {
-            this.timeText.Text = DateTime.Now.ToString("MM月dd日HH时");
+            this.taskAddNew.Focus();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ;
-        }
+ 
     }
 }

@@ -28,7 +28,11 @@ namespace DesktopAssistant.bases.utils
 
         public static string DataTime2String(DateTime dateTime)
         {
-            return dateTime.ToString("MM月dd日hh时");
+            string day = dateTime.Day.ToString();
+            string month = dateTime.Month.ToString();
+            string week = dateTime.DayOfWeek.ToString();
+
+            return string.Format("{0}月{1}日, {2}", month, day, week);
         }
 
         public static string Stamp2String(int stamp)

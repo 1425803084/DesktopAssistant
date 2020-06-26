@@ -14,11 +14,15 @@ namespace DesktopAssistant.app.page
     {
         public mainFrame()
         {
-            InitializeComponent();
-            this.taskPage1.freshList();
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.AllPaintingInWmPaint, true);
+            this.UpdateStyles();
 
+            InitializeComponent();
         }
 
-
+        private void taskPage1_Load(object sender, EventArgs e)
+        {
+            this.taskPage1.freshList();
+        }
     }
 }

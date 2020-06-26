@@ -18,136 +18,306 @@ namespace DesktopAssistant.app.task
     {
         public TaskPage()
         {
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.AllPaintingInWmPaint, true);
+            this.UpdateStyles();
+
             InitializeComponent();
-            this.taskdetail1.Visible = false;
-            this.taskdetail1.Enabled = false;
-            Size = new Size(this.taskLabel1.Size.Width, Size.Height);
+            CloseDetail();
 
-            taskdetail1.finish.Click += FinishClick;
-            taskdetail1.update.Click += UpdateClick;
+            //添加新任务
+            taskLabel.taskAddNew.textBox.KeyDown += TextBox_KeyDown; 
+            taskLabel.taskAddNew.hintImage.Click += HintImage_Click;
 
-            taskLabel1.button2.Click += AddNewTask;
+            taskDetail.delete.Click += Delete_Click;
+            taskDetail.back.Click += Back_Click;
+
+            taskDetail.taskNameAndSelect.selectBox.Click += SelectBox_Click;
+            taskDetail.taskNameAndSelect.selectBox.MouseHover += SelectBox_MouseHover;
+            taskDetail.taskNameAndSelect.selectBox.MouseLeave += SelectBox_MouseLeave;
+
 
         }
 
+        private void SelectBox_MouseLeave(object sender, EventArgs e)
+        {
+            if (!taskDetail.task.Finish)
+            {
+                taskDetail.taskNameAndSelect.selectBox.BackgroundImage = Properties.Resources.selectUnSelect;
+            }
+        }
+
+        private void SelectBox_MouseHover(object sender, EventArgs e)
+        {
+            if (!taskDetail.task.Finish)
+            {
+                taskDetail.taskNameAndSelect.selectBox.BackgroundImage = Properties.Resources.selectOn;
+            }
+        }
+
+        //返回按钮
+        private void Back_Click(object sender, EventArgs e)
+        {
+            CloseDetail();
+        }
+
+        //删除按钮
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            this.taskDetail.task.Finish = true;
+            this.taskDetail.SaveTask();
+            CloseDetail();
+            freshList();
+        }
+
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string text = taskLabel.taskAddNew.textBox.Text;
+                if (!text.Equals(""))
+                {
+                    AddNewTask(text);
+                    freshList();
+                    taskLabel.taskAddNew.textBox.Text = "";
+                }
+            }
+        }
+
+        private void HintImage_Click(object sender, EventArgs e)
+        {
+            string text = taskLabel.taskAddNew.textBox.Text;
+            if (!text.Equals(""))
+            {
+                AddNewTask(text);
+                freshList();
+            }
+        }
+
+
+        private void SelectBox_Click(object sender, EventArgs e)
+        {
+            //完成
+            Task task = taskDetail.task;
+            task.Finish = !task.Finish;
+            new TaskDAO().update(task);
+
+            if (task.Finish)
+            {
+                taskDetail.taskNameAndSelect.selectBox.BackgroundImage = Properties.Resources.selectSelected;
+            }
+            else
+            {
+                taskDetail.taskNameAndSelect.selectBox.BackgroundImage = Properties.Resources.selectUnSelect;
+            }
+            
+            Font font = taskDetail.taskNameAndSelect.taskName.Font;
+            taskDetail.taskNameAndSelect.taskName.Font = new Font(font.FontFamily, font.Size, font.Style ^ FontStyle.Strikeout);
+
+        }
 
         public void freshList()
         {
             TaskServiceImpl taskService = TaskServiceImpl.getTaskService();
-            List<domain.Task> taskList = taskService.getAll();
+            List<Task> taskList = taskService.getAll();
 
-            this.taskLabel1.taskList1.Clear();
+            this.taskLabel.taskList1.Clear();
             
             taskList.ForEach(t => {
-                this.taskLabel1.taskList1.AddTask(t, TaskClick);
+                this.taskLabel.taskList1.AddTask(t, TaskClick);
             });
         }
-
-
-        private void taskdetail1_Load(object sender, EventArgs e)
-        {
-            freshList();
-        }
-
 
         private void TaskClick(object sender, EventArgs e)
         {
             TaskLabel.TaskEach taskEach = (TaskLabel.TaskEach)sender;
 
-            if (this.taskdetail1.task == null)
+            if (this.taskDetail.task == null)
             {
-                this.taskdetail1.task = taskEach.TaskIn;
+                this.taskDetail.task = taskEach.TaskIn;
                 ShowDetail();
             }
-            else if ( taskEach.TaskIn.Id != this.taskdetail1.task.Id)
+            else if (taskEach.TaskIn.Id != this.taskDetail.task.Id)
             {
-                this.taskdetail1.SaveTask();
-                this.taskdetail1.task = taskEach.TaskIn;
+                this.taskDetail.SaveTask();
+                this.taskDetail.task = taskEach.TaskIn;
                 ShowDetail();
             }
             else
             {
-                this.taskdetail1.SaveTask();
-                this.taskdetail1.task = null;
+                this.taskDetail.SaveTask();
+                this.taskDetail.task = null;
                 CloseDetail();
             }
 
         }
 
-        public void AddTask()
-        {
-            
-        }
-
         public void ShowDetail()
         {
-            this.taskdetail1.Visible = true;
-            this.taskdetail1.Enabled = true;
-            this.taskdetail1.fresh();
-            Size = new Size(this.taskLabel1.Size.Width+this.taskdetail1.Size.Width, Size.Height);
+            this.taskDetail.fresh();
+            this.taskDetail.Visible = true;
+            this.taskDetail.Enabled = true;
+            this.taskLabel.Size = new Size(this.Size.Width - this.taskDetail.Size.Width, Size.Height);
         }
 
         public void CloseDetail()
         {
-            this.taskdetail1.Visible = false;
-            this.taskdetail1.Enabled = false;
-            Size = new Size(this.taskLabel1.Size.Width, Size.Height);
+            this.taskDetail.Visible = false;
+            this.taskDetail.Enabled = false;
+            this.taskLabel.Size = Size;
         }
 
-        private void TaskPage_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void taskLabel1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void taskLabel1_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        public void FinishClick(object sender, EventArgs e)
-        {
-            this.taskdetail1.task.Finish = true;
-            TaskDAO taskDAO = new TaskDAO();
-            taskDAO.update(this.taskdetail1.task);
-
-            CloseDetail();
-        }
-
-        public void UpdateClick(object sender, EventArgs e)
-        {
-            this.taskdetail1.SaveTask();
-            TaskDAO taskDAO = new TaskDAO();
-            taskDAO.update(this.taskdetail1.task);
-
-            freshList();
-
-            CloseDetail();
-        }
-
-        public void AddNewTask(object sender, EventArgs e)
+        public void AddNewTask(string taskName)
         {
             Random random = new Random();
-            domain.Task task = new domain.Task();
-            task.Id = TimeUtils.DataTime2Stamp(DateTime.Now) - random.Next(1, 10000);
+            Task task = new Task();
+            task.Id = TimeUtils.DataTime2Stamp(DateTime.Now);
             task.StartTime = TimeUtils.DataTime2Stamp(DateTime.Now);
-            task.EndTime = task.StartTime + 10000;
+            task.EndTime = task.StartTime + 60*60*24;
             task.TagId = 1;
-            task.Progress = 10;
-            task.Describe = "";
-            task.Detail = "";
+            task.Progress = 0;
+            task.Describe = taskName;
+            task.Detail = " ";
+            task.Finish = false;
 
             TaskDAO taskDAO = new TaskDAO();
             taskDAO.insert(task);
-
-            this.taskdetail1.task = task;
-            ShowDetail();
         }
 
+        public TaskPage(mainFrame mainFrame)
+        {
+            InitializeComponent();
+            //this.taskdetail1.Visible = false;
+            //this.taskdetail1.Enabled = false;
+            Size = new Size(this.taskLabel.Size.Width, Size.Height);
+            taskLabel.button1.Click += hide;
+            pParent = mainFrame;
+        }
+
+
+
+
+
+
+
+        private void hide(object sender, System.EventArgs e)
+        {
+            pParent.fwsPrevious = pParent.WindowState;
+
+            hidenTaskPage = new TaskPage(pParent);
+
+            CanPenetrate();
+        }
+
+        private void CanPenetrate()
+        {
+            uint intExTemp = GetWindowLong(this.Handle, GWL_EXSTYLE);
+            uint oldGWLEx = SetWindowLong(this.Handle, GWL_EXSTYLE, WS_EX_TRANSPARENT | WS_EX_LAYERED);
+            //pSon.Show();
+            //this.ShowInTaskbar = false;
+        }
+
+        private void Form2_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
+
+        {
+
+            if (blnMouseDown)
+
+            {
+
+                //Get the current position of the mouse in the screen
+
+                ptMouseNewPos = Control.MousePosition;
+
+
+
+                //Set window position
+
+                ptFormNewPos.X = ptMouseNewPos.X - ptMouseCurrrnetPos.X + ptFormPos.X;
+
+                ptFormNewPos.Y = ptMouseNewPos.Y - ptMouseCurrrnetPos.Y + ptFormPos.Y;
+
+
+
+                //Save window position
+
+                Location = ptFormNewPos;
+
+                ptFormPos = ptFormNewPos;
+
+
+
+                //Save mouse position
+
+                ptMouseCurrrnetPos = ptMouseNewPos;
+
+            }
+
+        }
+
+        private void Form2_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+
+        {
+
+            if (e.Button == MouseButtons.Left)
+
+            {
+
+                blnMouseDown = true;
+
+
+
+                // Save window position and mouse position
+
+                ptMouseCurrrnetPos = Control.MousePosition;
+
+                ptFormPos = Location;
+
+            }
+
+        }
+
+        private void Form2_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e)
+
+        {
+
+            if (e.Button == MouseButtons.Left)
+
+                //Return back signal
+
+                blnMouseDown = false;
+
+        }
+
+        private void frmTopMost_DoubleClick(object sender, System.EventArgs e)
+
+        {
+
+            SwitchToMain();
+
+        }
+
+        private void SwitchToMain()
+
+        {
+
+            //Change main window status here
+
+            pParent.RestoreWindow();
+
+            //Hide top most window
+
+            this.Hide();
+
+        }
+
+        private void mnuMainWindow_Click(object sender, System.EventArgs e)
+
+        {
+
+            SwitchToMain();
+
+        }
 
     }
 }

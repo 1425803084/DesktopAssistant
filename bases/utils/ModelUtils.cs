@@ -58,27 +58,22 @@ namespace DesktopAssistant.bases.utils
             {
                 using (dr)
                 {
-                    if (dr.Read())
+                    List<T> models = new List<T>();
+                    while (dr.Read())
                     {
                         Type modelType = typeof(T);
-                        List<T> models = new List<T>();
-                        int pLength = modelType.GetProperties().Length;
-                        for (int j = 0; j < dr.FieldCount; j+= pLength)
+                        T model = Activator.CreateInstance<T>();
+                        for (int i = 0; i < dr.FieldCount; i++)
                         {
-                            T model = Activator.CreateInstance<T>();
-                            for (int i = j; i < j+pLength; i++)
+                            if (!IsNullOrDbNull(dr[i]))
                             {
-                                if (!IsNullOrDbNull(dr[i]))
-                                {
-                                    PropertyInfo pi = modelType.GetProperty(GetPropertyName(dr.GetName(i)));
-                                    pi.SetValue(model, HackType(dr[i], pi.PropertyType), null);
-                                }
+                                PropertyInfo pi = modelType.GetProperty(GetPropertyName(dr.GetName(i)));
+                                pi.SetValue(model, HackType(dr[i], pi.PropertyType), null);
                             }
-                            models.Add(model);
                         }
-                        
-                        return models;
+                        models.Add(model);
                     }
+                    return models;
                 }
                 return default(List<T>);
             }
