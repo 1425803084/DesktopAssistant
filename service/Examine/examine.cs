@@ -34,8 +34,8 @@ namespace DesktopAssistant.service.exam
         //比较运行时长与所设的防沉迷时间
         public void TimeCompare(Process p)
         {
-            TimeSpan t1 = new TimeSpan(1, 0, 0);//提醒时间1
-            TimeSpan t2 = new TimeSpan(2, 0, 0);//超过该时间则强行关闭
+            TimeSpan t1 = new TimeSpan(0, 0, 30);//提醒时间1
+            TimeSpan t2 = new TimeSpan(0, 0, 50);//超过该时间则强行关闭
             int result1 = TimeSpan.Compare(getProcessTimeLong(p), t1);
             int result2 = TimeSpan.Compare(getProcessTimeLong(p), t2);
             if (result1 >= 0 && result2 < 0)
@@ -53,7 +53,7 @@ namespace DesktopAssistant.service.exam
         public void examineProcess()
         {
             //从文件中提取游戏名单，提供文件路径
-            StreamReader sr1 = new StreamReader("D:\\vs练习文件\\word1.txt", Encoding.UTF8);
+            StreamReader sr1 = new StreamReader("D:\\C#大作业\\text.txt", Encoding.UTF8);
             string content = sr1.ReadToEnd();
             content = content.Replace("\r", "");
             string[] pname = content.Split('\n');

@@ -226,14 +226,22 @@ namespace DesktopAssistant.app.page
 
         private void SelfStart_CheckedChanged(object sender, EventArgs e)
         {
-            this.class1.setAutoStart(this.DesktopPet.Checked);
+            this.class1.setAutoStart(this.SelfStart.Checked);
+        }
+
+        public void theout(object source, System.Timers.ElapsedEventArgs e)
+        {
+            this.examine.examineProcess();
         }
 
         private void GameMaster_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.DesktopPet.Checked == true)
+            if (this.GameMaster.Checked == true)
             {
-                this.examine.examineProcess();
+                System.Timers.Timer t = new System.Timers.Timer(10000);
+                t.Elapsed += new System.Timers.ElapsedEventHandler(theout);
+                t.AutoReset = true;
+                t.Enabled = true;
             }
         }
 
@@ -241,7 +249,7 @@ namespace DesktopAssistant.app.page
         {
             if (this.DesktopPet.Checked == true)
             {
-                System.Diagnostics.Process.Start(@"");
+                System.Diagnostics.Process.Start(@"D:\C#大作业\Ped (2)\Ped\WindowsCate\bin\Debug\WindowsCate.exe");
             }
             else
             {
