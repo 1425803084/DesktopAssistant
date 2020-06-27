@@ -199,36 +199,28 @@ namespace DesktopAssistant.app.page
         }
 
         public void RestoreWindow()
-
         {
-
             this.WindowState = fwsPrevious;
-
             this.ShowInTaskbar = true;
-
         }
 
         private void ListSet_Click(object sender, EventArgs e)
         {
-            //this.taskPage1.Visible = true;
-            //this.taskPage1.Enabled = true;
-            //this.tomatoTimer1.Visible = false;
-            //this.tomatoTimer1.Enabled = false;
-            //this.taskPage1.freshList();
-            //this.panel2.Controls.Clear();
-            //this.panel2.Controls.Add(taskPage);
-            //this.panel2.Show();
+            this.taskPage1.Visible = true;
+            this.taskPage1.Enabled = true;
+            this.tomatoTimer1.Visible = false;
+            this.tomatoTimer1.Enabled = false;
+            this.taskPage1.freshList();
         }
 
         private void TClock_Click(object sender, EventArgs e)
         {
-            //this.taskPage1.Visible = false;
-            //this.taskPage1.Enabled = false;
-            //this.tomatoTimer1.Visible = true;
-            //this.tomatoTimer1.Enabled = true;
-            //this.panel2.Controls.Clear();
-            //this.panel2.Controls.Add(tomatoTimer);
-            //this.panel2.Show();
+            this.taskPage1.Visible = false;
+            this.taskPage1.Enabled = false;
+            this.tomatoTimer1.Visible = true;
+            this.tomatoTimer1.Enabled = true;
+
+            this.tomatoTimer1.Size = new System.Drawing.Size(this.tomatoTimer1.Size.Width *4/3, this.Size.Height);
         }
 
 

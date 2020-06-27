@@ -35,8 +35,37 @@ namespace DesktopAssistant.app.task
             taskDetail.taskNameAndSelect.selectBox.MouseHover += SelectBox_MouseHover;
             taskDetail.taskNameAndSelect.selectBox.MouseLeave += SelectBox_MouseLeave;
 
+            taskDetail.DataUpdate += freshTaskList;
+
+            taskDetail.taskNameAndSelect.taskName.LostFocus += TaskName_LostFocus;
+            taskDetail.taskNameAndSelect.taskName.KeyDown += TaskName_KeyDown;
 
         }
+
+        private void TaskName_KeyDown(object sender, KeyEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void TaskName_LostFocus(object sender, EventArgs e)
+        {
+            string text = taskDetail.taskNameAndSelect.taskName.Text;
+            if (!text.Equals(""))
+            {
+                taskDetail.task.Describe = text;
+                taskDetail.SaveTask();
+            }
+            else
+            {
+                taskDetail.taskNameAndSelect.taskName.Text = taskDetail.task.Describe;
+            }
+        }
+
+        private void freshTaskList(object sender, EventArgs e)
+        {
+            freshList();
+        }
+
 
         private void SelectBox_MouseLeave(object sender, EventArgs e)
         {

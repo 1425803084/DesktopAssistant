@@ -53,9 +53,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("黑体", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.Snow;
-            this.label1.Location = new System.Drawing.Point(316, 246);
+            this.label1.Location = new System.Drawing.Point(338, 382);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 92);
+            this.label1.Size = new System.Drawing.Size(38, 61);
             this.label1.TabIndex = 5;
             this.label1.Text = ":";
             // 
@@ -65,9 +66,10 @@
             this.Second.BackColor = System.Drawing.Color.Transparent;
             this.Second.Font = new System.Drawing.Font("黑体", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Second.ForeColor = System.Drawing.Color.Snow;
-            this.Second.Location = new System.Drawing.Point(369, 255);
+            this.Second.Location = new System.Drawing.Point(373, 388);
+            this.Second.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Second.Name = "Second";
-            this.Second.Size = new System.Drawing.Size(104, 72);
+            this.Second.Size = new System.Drawing.Size(70, 48);
             this.Second.TabIndex = 4;
             this.Second.Text = "00";
             // 
@@ -77,9 +79,10 @@
             this.Min.BackColor = System.Drawing.Color.Transparent;
             this.Min.Font = new System.Drawing.Font("黑体", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Min.ForeColor = System.Drawing.Color.Snow;
-            this.Min.Location = new System.Drawing.Point(206, 255);
+            this.Min.Location = new System.Drawing.Point(264, 388);
+            this.Min.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Min.Name = "Min";
-            this.Min.Size = new System.Drawing.Size(104, 72);
+            this.Min.Size = new System.Drawing.Size(70, 48);
             this.Min.TabIndex = 3;
             this.Min.Text = "30";
             this.toolTip1.SetToolTip(this.Min, "番茄工作法，以三十分钟为单位工作");
@@ -91,10 +94,10 @@
             this.reStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.reStart.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.reStart.ForeColor = System.Drawing.Color.BlueViolet;
-            this.reStart.Location = new System.Drawing.Point(328, 372);
-            this.reStart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.reStart.Location = new System.Drawing.Point(329, 470);
+            this.reStart.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.reStart.Name = "reStart";
-            this.reStart.Size = new System.Drawing.Size(123, 78);
+            this.reStart.Size = new System.Drawing.Size(82, 52);
             this.reStart.TabIndex = 11;
             this.reStart.Text = "复位";
             this.reStart.UseVisualStyleBackColor = false;
@@ -107,10 +110,10 @@
             this.Pause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Pause.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Pause.ForeColor = System.Drawing.Color.BlueViolet;
-            this.Pause.Location = new System.Drawing.Point(73, 372);
-            this.Pause.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Pause.Location = new System.Drawing.Point(99, 470);
+            this.Pause.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Pause.Name = "Pause";
-            this.Pause.Size = new System.Drawing.Size(123, 78);
+            this.Pause.Size = new System.Drawing.Size(82, 52);
             this.Pause.TabIndex = 10;
             this.Pause.Text = "暂停";
             this.Pause.UseVisualStyleBackColor = false;
@@ -123,10 +126,10 @@
             this.Start.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Start.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Start.ForeColor = System.Drawing.Color.BlueViolet;
-            this.Start.Location = new System.Drawing.Point(199, 372);
-            this.Start.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Start.Location = new System.Drawing.Point(212, 470);
+            this.Start.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Start.Name = "Start";
-            this.Start.Size = new System.Drawing.Size(123, 78);
+            this.Start.Size = new System.Drawing.Size(82, 52);
             this.Start.TabIndex = 9;
             this.Start.Text = "开始";
             this.Start.UseVisualStyleBackColor = false;
@@ -138,9 +141,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.MediumPurple;
-            this.label2.Location = new System.Drawing.Point(53, 645);
+            this.label2.Location = new System.Drawing.Point(42, 404);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 33);
+            this.label2.Size = new System.Drawing.Size(102, 22);
             this.label2.TabIndex = 12;
             this.label2.Text = "完成进度";
             // 
@@ -161,9 +165,10 @@
             this.Hour.BackColor = System.Drawing.Color.Transparent;
             this.Hour.Font = new System.Drawing.Font("黑体", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Hour.ForeColor = System.Drawing.Color.Snow;
-            this.Hour.Location = new System.Drawing.Point(61, 255);
+            this.Hour.Location = new System.Drawing.Point(168, 388);
+            this.Hour.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Hour.Name = "Hour";
-            this.Hour.Size = new System.Drawing.Size(104, 72);
+            this.Hour.Size = new System.Drawing.Size(70, 48);
             this.Hour.TabIndex = 30;
             this.Hour.Text = "30";
             this.toolTip1.SetToolTip(this.Hour, "番茄工作法，以三十分钟为单位工作");
@@ -182,10 +187,10 @@
             "3",
             "4",
             "5"});
-            this.HourSelect.Location = new System.Drawing.Point(180, 195);
-            this.HourSelect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.HourSelect.Location = new System.Drawing.Point(175, 326);
+            this.HourSelect.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.HourSelect.Name = "HourSelect";
-            this.HourSelect.Size = new System.Drawing.Size(78, 30);
+            this.HourSelect.Size = new System.Drawing.Size(53, 22);
             this.HourSelect.TabIndex = 25;
             // 
             // MinuteSelect
@@ -201,10 +206,10 @@
             "15",
             "30",
             "45"});
-            this.MinuteSelect.Location = new System.Drawing.Point(344, 193);
-            this.MinuteSelect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MinuteSelect.Location = new System.Drawing.Point(281, 326);
+            this.MinuteSelect.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.MinuteSelect.Name = "MinuteSelect";
-            this.MinuteSelect.Size = new System.Drawing.Size(77, 30);
+            this.MinuteSelect.Size = new System.Drawing.Size(53, 22);
             this.MinuteSelect.TabIndex = 26;
             // 
             // label3
@@ -213,31 +218,36 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("宋体", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.ForeColor = System.Drawing.Color.MediumPurple;
-            this.label3.Location = new System.Drawing.Point(3, 191);
+            this.label3.Location = new System.Drawing.Point(19, 326);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(180, 33);
+            this.label3.Size = new System.Drawing.Size(125, 22);
             this.label3.TabIndex = 27;
             this.label3.Text = "选择倒计时";
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("宋体", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.ForeColor = System.Drawing.Color.MediumPurple;
-            this.label4.Location = new System.Drawing.Point(306, 199);
+            this.label4.Location = new System.Drawing.Point(236, 328);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 26);
+            this.label4.Size = new System.Drawing.Size(20, 17);
             this.label4.TabIndex = 28;
             this.label4.Text = "时";
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("宋体", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label5.ForeColor = System.Drawing.Color.MediumPurple;
-            this.label5.Location = new System.Drawing.Point(471, 198);
+            this.label5.Location = new System.Drawing.Point(346, 327);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 26);
+            this.label5.Size = new System.Drawing.Size(20, 17);
             this.label5.TabIndex = 29;
             this.label5.Text = "分";
             // 
@@ -246,15 +256,16 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("黑体", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.ForeColor = System.Drawing.Color.Snow;
-            this.label7.Location = new System.Drawing.Point(154, 246);
+            this.label7.Location = new System.Drawing.Point(230, 382);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 81);
+            this.label7.Size = new System.Drawing.Size(33, 54);
             this.label7.TabIndex = 31;
             this.label7.Text = ":";
             // 
             // TomatoTimer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -273,9 +284,9 @@
             this.Controls.Add(this.HourSelect);
             this.Controls.Add(this.MinuteSelect);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "TomatoTimer";
-            this.Size = new System.Drawing.Size(514, 842);
+            this.Size = new System.Drawing.Size(499, 826);
             this.Load += new System.EventHandler(this.TomatoTimer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

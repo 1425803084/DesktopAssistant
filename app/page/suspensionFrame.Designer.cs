@@ -18,7 +18,7 @@ namespace DesktopAssistant.app.page
         private const int GWL_EXSTYLE = (-20);
         private bool blnMouseDown = false;
         public mainFrame pParent;
-        private TaskPage hidenTaskPage;
+        public TaskPage hidenTaskPage;
         private ToMain pSon;
         private FormWindowState fwsPrevious;
         #region
@@ -56,28 +56,26 @@ namespace DesktopAssistant.app.page
             // 
             // taskPage1
             // 
-            this.taskPage1.Location = new System.Drawing.Point(0, 4);
-            this.taskPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.taskPage1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.taskPage1.Location = new System.Drawing.Point(-1, -2);
             this.taskPage1.Name = "taskPage1";
-            this.taskPage1.Size = new System.Drawing.Size(491, 958);
+            this.taskPage1.Size = new System.Drawing.Size(407, 849);
             this.taskPage1.TabIndex = 0;
-            this.taskPage1.Load += new System.EventHandler(this.Form2_Load);
-            this.taskPage1.Click += new System.EventHandler(this.frmTopMost_DoubleClick);
-            this.taskPage1.DoubleClick += new System.EventHandler(this.DoubleClick);
-            this.taskPage1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseDown);
-            this.taskPage1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseMove);
-            this.taskPage1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseUp);
             // 
             // suspensionFrame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 958);
+            this.ClientSize = new System.Drawing.Size(405, 847);
             this.Controls.Add(this.taskPage1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "suspensionFrame";
-            this.Opacity = 0.5D;
+            this.Opacity = 0.7D;
             this.Text = "suspensionFrame";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
 
         }
@@ -92,23 +90,17 @@ namespace DesktopAssistant.app.page
         }
 
         private void Form2_Load(object sender, System.EventArgs e)
-
         {
             
 
-            this.Show();
-
-      
+            //this.Show();
 
             // Init window size and position
 
             this.Top = pParent.Top;
 
             this.Left = Screen.PrimaryScreen.Bounds.Width/2 ;
-
-    
-
-            
+ 
             fwsPrevious = this.WindowState;
 
             // Create top most window
@@ -120,7 +112,7 @@ namespace DesktopAssistant.app.page
         public void hide(object sender, System.EventArgs e)
         {
             pParent.fwsPrevious = pParent.WindowState;
-            this.taskPage1 = pParent.taskPage1;
+            this.taskPage1.freshList();
             this.Show();
             this.pParent.Visible = false;
             this.ShowInTaskbar = false;
@@ -256,6 +248,6 @@ namespace DesktopAssistant.app.page
 
         }
 
-        private TaskPage taskPage1;
+        public TaskPage taskPage1;
     }
 }

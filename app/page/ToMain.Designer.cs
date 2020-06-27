@@ -27,6 +27,9 @@ namespace DesktopAssistant.app.page
         {
             InitializeComponent();
             pParent = form;
+
+            this.Size = this.pParent.taskPage1.taskLabel.button1.Size;
+
         }
 
         #region Windows Form Designer generated code
@@ -37,29 +40,22 @@ namespace DesktopAssistant.app.page
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 36);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.frmTopMost_DoubleClick);
             // 
             // ToMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(116, 36);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(194)))), ((int)(((byte)(244)))));
+            this.ClientSize = new System.Drawing.Size(31, 28);
+            this.Size = new System.Drawing.Size(31, 28);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ToMain";
-            this.Opacity = 0.2D;
+            this.Opacity = 0.3D;
             this.Text = "ToMain";
             this.Load += new System.EventHandler(this.Form3_Load);
+            this.Click += new System.EventHandler(this.frmTopMost_DoubleClick);
             this.ResumeLayout(false);
 
         }
@@ -72,15 +68,13 @@ namespace DesktopAssistant.app.page
 
             this.Show();
 
-
-
             // Init window size and position
-
-            this.Top = pParent.Top + 69;
-            this.Left = pParent.Left + 247;
-
-
-
+            //this.Top = pParent.Top + 50;
+            //this.Left = pParent.Left + 247;
+            this.ClientSize = this.pParent.taskPage1.taskLabel.button1.Size;
+            this.Size = this.pParent.taskPage1.taskLabel.button1.Size;
+            this.Top = pParent.Top + pParent.taskPage1.taskLabel.button1.Top;
+            this.Left = pParent.Left + pParent.taskPage1.taskLabel.button1.Left;
         }
 
         private void frmTopMost_DoubleClick(object sender, System.EventArgs e)
@@ -107,7 +101,5 @@ namespace DesktopAssistant.app.page
             this.pParent.Hide();
 
         }
-
-        private System.Windows.Forms.Button button1;
     }
 }

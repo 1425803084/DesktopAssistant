@@ -155,6 +155,24 @@
     <Compile Include="app\controls\Add.Designer.cs">
       <DependentUpon>Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="app\menu\CheckList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="app\menu\CheckList.Designer.cs">
+      <DependentUpon>CheckList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="app\menu\MainMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="app\menu\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="app\menu\MenuList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="app\menu\MenuList.Designer.cs">
+      <DependentUpon>MenuList.cs</DependentUpon>
+    </Compile>
     <Compile Include="app\page\mainFrame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,6 +323,15 @@
     <EmbeddedResource Include="app\controls\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="app\menu\CheckList.resx">
+      <DependentUpon>CheckList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="app\menu\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="app\menu\MenuList.resx">
+      <DependentUpon>MenuList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="app\page\mainFrame.resx">
       <DependentUpon>mainFrame.cs</DependentUpon>
     </EmbeddedResource>
@@ -413,6 +440,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PHLTrackBar.dll" />
+    <None Include="Resources\Lock.png" />
+    <None Include="Resources\sun.png" />
     <None Include="Resources\eglass-tag_fix.png" />
     <None Include="Resources\canlender_out.png" />
     <None Include="Resources\canlender_fixed.png" />

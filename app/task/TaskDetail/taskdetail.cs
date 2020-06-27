@@ -18,6 +18,8 @@ namespace DesktopAssistant.app.TaskDetail
     {
         public Task task;
 
+        public EventHandler DataUpdate;
+
         public Taskdetail()
         {
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.AllPaintingInWmPaint, true);
@@ -106,6 +108,9 @@ namespace DesktopAssistant.app.TaskDetail
             
             Tag tag = tagEach.TagIn;
             setTag(tag.Id);
+
+            this.task.TagId = tag.Id;
+            SaveTask();
 
             this.tagSelectList.Visible = false;
             this.tagSelectList.Enabled = false;
@@ -223,8 +228,8 @@ namespace DesktopAssistant.app.TaskDetail
             }
             else
             {
-                this.timeLabel.ForeColor = SystemColors.GrayText;
-                this.timeLabel.Text = "添加任务标记";
+                this.tagLabel.ForeColor = SystemColors.GrayText;
+                this.tagLabel.Text = "添加任务标记";
                 this.tagImage.BackgroundImage = Properties.Resources.eglass_tag;
             }
             
@@ -255,6 +260,7 @@ namespace DesktopAssistant.app.TaskDetail
         public void SaveTask()
         {
             new TaskDAO().update(task);
+            this.DataUpdate.Invoke(this, new EventArgs());
         }
        
         //
@@ -302,6 +308,7 @@ namespace DesktopAssistant.app.TaskDetail
             this.monthCalendar1.Enabled = false;
 
             SaveTask();
+
         }
     }
 }
